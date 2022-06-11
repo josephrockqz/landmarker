@@ -23,6 +23,7 @@ class Game extends React.Component {
 			],
 			metricSystemBool: true,
 			points: [],
+			rings: [],
 			totalKilometers: 0,
 		};
 	}
@@ -78,6 +79,16 @@ class Game extends React.Component {
 				totalKilometers: this.state.totalKilometers + d,
 			});
 
+			let ring = {
+				lat: lat1,
+				lng: lng1,
+			};
+			let rings = this.state.rings.slice();
+			rings.push(ring);
+			this.setState({
+				rings: rings,
+			});
+
 			if (this.state.landmarkIndex < this.state.landmarks.length - 1) {
 				this.setState({
 					landmarkIndex: this.state.landmarkIndex + 1
@@ -87,16 +98,15 @@ class Game extends React.Component {
 		
 	}
 
-	handleLabelClick(label) {
-		console.log(label);
-	}
-
   	render() {
 		return (
 			<div>
 				<div className="title">
-					<h2>{this.state.landmarks[this.state.landmarkIndex].properties.name}</h2>
-					<h4>{!this.state.metricSystemBool ? Math.round(this.state.totalKilometers * 0.6213711922) : this.state.totalKilometers}</h4>
+					<h2>Where is the {this.state.landmarks[this.state.landmarkIndex].properties.name}?</h2>
+					<h4>
+						{!this.state.metricSystemBool ? Math.round(this.state.totalKilometers * 0.6213711922) : this.state.totalKilometers} 
+						{!this.state.metricSystemBool ? ' miles' : ' km'}
+					</h4>
 				</div>
 				<Globe
 					backgroundColor='peachpuff'
@@ -116,12 +126,16 @@ class Game extends React.Component {
 					labelDotRadius={0.5}
 					labelColor={d => d.properties.color}
 					labelResolution={5}
-					onLabelClick={label => this.handleLabelClick(label)}
 					// arc stuff
 					arcsData={this.state.arcs}
 					arcColor={d => d.arcColor}
-					arcLabel={d => !this.state.metricSystemBool ? Math.round(d.distance * 0.6213711922) : d.distance}
+					arcLabel={d => !this.state.metricSystemBool ? Math.round(d.distance * 0.6213711922) + ' miles' : d.distance + ' km'}
 					// arcDashAnimateTime={() => Math.random() * 20 + 50}
+					// ring stuff
+					ringsData={this.state.rings}
+					ringLat={d => d.lat}
+					ringLng={d => d.lng}
+					ringColor={'blue'}
 				/>
 			</div>
 		);

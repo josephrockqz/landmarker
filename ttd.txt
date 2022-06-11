@@ -1,5 +1,3 @@
-Ripple ring effect on globe click
-Give functionality to label click/hover
 Make user interface taylored to mobile
     (can disable certain features to make more manageable)
     Important that game is smooth on mobile!
