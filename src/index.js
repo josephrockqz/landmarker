@@ -23,7 +23,7 @@ class Game extends React.Component {
 			],
 			metricSystemBool: true,
 			points: [],
-			totalMiles: 0,
+			totalKilometers: 0,
 		};
 	}
 
@@ -75,7 +75,7 @@ class Game extends React.Component {
 			arcs.push(arc);
 			this.setState({
 				arcs: arcs,
-				totalMiles: this.state.totalMiles + d,
+				totalKilometers: this.state.totalKilometers + d,
 			});
 
 			if (this.state.landmarkIndex < this.state.landmarks.length - 1) {
@@ -96,7 +96,7 @@ class Game extends React.Component {
 			<div>
 				<div className="title">
 					<h2>{this.state.landmarks[this.state.landmarkIndex].properties.name}</h2>
-					<h4>{this.state.totalMiles}</h4>
+					<h4>{!this.state.metricSystemBool ? Math.round(this.state.totalKilometers * 0.6213711922) : this.state.totalKilometers}</h4>
 				</div>
 				<Globe
 					backgroundColor='peachpuff'
@@ -120,13 +120,10 @@ class Game extends React.Component {
 					// arc stuff
 					arcsData={this.state.arcs}
 					arcColor={d => d.arcColor}
-					arcLabel={d => d.distance}
+					arcLabel={d => !this.state.metricSystemBool ? Math.round(d.distance * 0.6213711922) : d.distance}
 					// arcDashAnimateTime={() => Math.random() * 20 + 50}
 				/>
 			</div>
-
-			
-			
 		);
   	}
 }
