@@ -21,6 +21,7 @@ class Game extends React.Component {
 					}
 				}
 			],
+			metricSystemBool: true,
 			points: [],
 			totalMiles: 0,
 		};
@@ -59,7 +60,7 @@ class Game extends React.Component {
 			const Δλ = (lng2-lng1) * Math.PI/180;
 			const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ/2) * Math.sin(Δλ/2);
 			const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-			const d = R * c / 1000; // in metres
+			const d = Math.round(R * c / 1000); // in km
 
 			let arc = {
 				arcLabel: this.state.landmarks[this.state.landmarkIndex].properties.name,
@@ -67,7 +68,8 @@ class Game extends React.Component {
 				startLng: lng1,
 				endLat: lat2,
 				endLng: lng2,
-				color: 'blue'
+				color: 'blue',
+				distance: d,
 			};
 			let arcs = this.state.arcs.slice();
 			arcs.push(arc);
@@ -98,6 +100,7 @@ class Game extends React.Component {
 				</div>
 				<Globe
 					backgroundColor='peachpuff'
+					// bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
 					globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
 					onGlobeClick={click => this.handleGlobeClick(click)}
 					// point stuff
@@ -117,6 +120,7 @@ class Game extends React.Component {
 					// arc stuff
 					arcsData={this.state.arcs}
 					arcColor={d => d.arcColor}
+					arcLabel={d => d.distance}
 					// arcDashAnimateTime={() => Math.random() * 20 + 50}
 				/>
 			</div>
