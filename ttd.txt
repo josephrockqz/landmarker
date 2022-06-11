@@ -1,4 +1,27 @@
-Find higher resolution picture of Earth
+Have game view resemble hand-drawn sketch
 Make labels clickable
-Place pins win Earth is clicked
-Calculate distance between pin and label
+Make user interface taylored to mobile
+    (can disable certain features to make more manageable)
+    Important that game is smooth on mobile!
+Pick better background color
+
+Screens
+    Home View
+    Game View
+    Game Done View
+        Stats for each selection, total miles, how it compares to others
+    Setting View
+        Unit system
+        Modes: daily mode, challenge mode, # of landmarks, difficulty
+            (keep it simple)
+        Language
+        Globe theme and/or bkacground theme
+    Stats View
+        (Distribution of all player scores)
+
+
+Buy domain (landmarkgame.com)
+See how cloudflare and nginx handle a new domain
+
+Expand meaning of landmark (legitimately) to include major discoveries, historical events, etc.
+    (could lead to different game modes)

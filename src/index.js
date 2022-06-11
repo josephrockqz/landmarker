@@ -22,14 +22,20 @@ class Game extends React.Component {
 				}
 			],
 			points: [],
+			totalMiles: 0,
 		};
 	}
 
 	handleGlobeClick(click) {
 		if (this.state.landmarkIndex < this.state.landmarks.length) {
+			const lat1 = click.lat;
+			const lat2 = this.state.landmarks[this.state.landmarkIndex].properties.latitude;
+			const lng1 = click.lng;
+			const lng2 = this.state.landmarks[this.state.landmarkIndex].properties.longitude;
+
 			let point = {
-				lat: click.lat,
-				lng: click.lng,
+				lat: lat1,
+				lng: lng1,
 				size: 0.1,
 				color: 'gold'
 			};
@@ -45,18 +51,29 @@ class Game extends React.Component {
 				labels: labels
 			});
 
+			// calculate great-circle distance using haversine formula
+			const R = 6371e3; // metres
+			const φ1 = lat1 * Math.PI/180; // φ, λ in radians
+			const φ2 = lat2 * Math.PI/180;
+			const Δφ = (lat2-lat1) * Math.PI/180;
+			const Δλ = (lng2-lng1) * Math.PI/180;
+			const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ/2) * Math.sin(Δλ/2);
+			const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+			const d = R * c / 1000; // in metres
+
 			let arc = {
 				arcLabel: this.state.landmarks[this.state.landmarkIndex].properties.name,
-				startLat: click.lat,
-				startLng: click.lng,
-				endLat: this.state.landmarks[this.state.landmarkIndex].properties.latitude,
-				endLng: this.state.landmarks[this.state.landmarkIndex].properties.longitude,
+				startLat: lat1,
+				startLng: lng1,
+				endLat: lat2,
+				endLng: lng2,
 				color: 'blue'
 			};
 			let arcs = this.state.arcs.slice();
 			arcs.push(arc);
 			this.setState({
-				arcs: arcs
+				arcs: arcs,
+				totalMiles: this.state.totalMiles + d,
 			});
 
 			if (this.state.landmarkIndex < this.state.landmarks.length - 1) {
@@ -75,7 +92,10 @@ class Game extends React.Component {
   	render() {
 		return (
 			<div>
-				<div className="title"><h2>{this.state.landmarks[this.state.landmarkIndex].properties.name}</h2></div>
+				<div className="title">
+					<h2>{this.state.landmarks[this.state.landmarkIndex].properties.name}</h2>
+					<h4>{this.state.totalMiles}</h4>
+				</div>
 				<Globe
 					backgroundColor='peachpuff'
 					globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
@@ -97,9 +117,11 @@ class Game extends React.Component {
 					// arc stuff
 					arcsData={this.state.arcs}
 					arcColor={d => d.arcColor}
-					// arcDashAnimateTime={() => Math.random() * 4000 + 500}
+					// arcDashAnimateTime={() => Math.random() * 20 + 50}
 				/>
 			</div>
+
+			
 			
 		);
   	}
