@@ -1,0 +1,4 @@
+Find higher resolution picture of Earth
+Make labels clickable
+Place pins win Earth is clicked
+Calculate distance between pin and label
