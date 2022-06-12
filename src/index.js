@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import Globe from 'react-globe.gl';
+import { TbHome } from 'react-icons/tb';
+import { IoMdSettings } from 'react-icons/io';
+import { TbChartPie3 } from 'react-icons/tb';
 
 class Game extends React.Component {
 	constructor(props) {
@@ -22,6 +25,7 @@ class Game extends React.Component {
 				}
 			],
 			metricSystemBool: true,
+			nightModeBool: false,
 			points: [],
 			rings: [],
 			totalKilometers: 0,
@@ -87,6 +91,13 @@ class Game extends React.Component {
 			rings.push(ring);
 			this.setState({
 				rings: rings,
+			}, () => {
+				setTimeout(() => {
+					let rings = [];
+					this.setState({
+						rings: rings,
+					});
+				  }, "3000")
 			});
 
 			if (this.state.landmarkIndex < this.state.landmarks.length - 1) {
@@ -100,16 +111,33 @@ class Game extends React.Component {
 
   	render() {
 		return (
-			<div>
-				<div className="title">
-					<h2>Where is the {this.state.landmarks[this.state.landmarkIndex].properties.name}?</h2>
-					<h4>
+			<div className="main">
+				<div className="navbar">
+					<div className="nav-left">
+						<button className="nav-button"><TbHome size={30} /></button>
+					</div>
+					<div className="nav-middle">
+						<button className="nav-button"><h1 className="nav-header">LANDMARKER</h1></button>
+					</div>
+					<div className="nav-right">
+						<button className="nav-button"><TbChartPie3 size={30} /></button>
+						<button className="nav-button"><IoMdSettings size={30} /></button>
+					</div>
+				</div>
+				<div className="game-prompt">
+					<h2 className="header">
+						Where is the <span className="landmark-name">{this.state.landmarks[this.state.landmarkIndex].properties.name}</span>?
+					</h2>
+					<h2 className="header-middle">
+						Locate on the globe
+					</h2>
+					<h4 className="header">
 						{!this.state.metricSystemBool ? Math.round(this.state.totalKilometers * 0.6213711922) : this.state.totalKilometers} 
 						{!this.state.metricSystemBool ? ' miles' : ' km'}
 					</h4>
 				</div>
 				<Globe
-					backgroundColor='peachpuff'
+					backgroundColor='rgba(255,0,0,0)'
 					// bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
 					globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
 					onGlobeClick={click => this.handleGlobeClick(click)}
@@ -142,6 +170,7 @@ class Game extends React.Component {
   	}
 }
 
-document.body.style.background = "peachpuff";
+// document.body.style.background = "rgb(2,0,36)";
+document.body.style.background = "linear-gradient(rgba(0,212,255,0.5) 0%, rgba(9,9,121,0.5) 35%, rgba(2,0,36,0.5) 100%)";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Game />);

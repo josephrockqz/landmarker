@@ -1,10 +1,11 @@
 Make user interface taylored to mobile
     (can disable certain features to make more manageable)
     Important that game is smooth on mobile!
-Pick better background color
 Make game flow
     Transition between landmarks
     Game end (when all landmarks have been guessed)
+Limit how much you can zoom in/out on globe
+Change fonts
 
 Screens
     Home View

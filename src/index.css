@@ -1,4 +1,63 @@
-.title {
+body {
+	min-height: 100%;
+	min-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.header {
+	margin: 0px;
+}
+
+.header-middle {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.landmark-name {
+	color: #DA4869;
+}
+
+.navbar {
+	border-bottom: 2px solid black;
+	display: flex;
+  	flex-direction: row;
+  	flex-wrap: nowrap;
+  	justify-content: space-between;
+  	background-color: transparent;
+	padding-top: 20px;
+}
+
+.nav-button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.nav-header {
+	margin: 0px;
+}
+
+.nav-left {
+	height: 100%;
+	width: 100px;
+	align-self: flex-end;
+}
+
+.nav-middle {
+	height: 100%;
+	align-self: flex-end;
+}
+
+.nav-right {
+	height: 100%;
+	width: 100px;
+	align-self: flex-end;
+}
+
+.game-prompt {
+	background: transparent;
   	text-align: center;
 	color: black;
+	padding-top: 20px;
 }
