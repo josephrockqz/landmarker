@@ -5,10 +5,9 @@ body {
 	margin: 0;
 }
 
-canvas {
-	display: block !important;
-	width: 600px !important;
-	height: 600px !important;
+html {
+	height: 100%;
+	margin: 0;
 }
 
 .game-prompt {
@@ -16,13 +15,6 @@ canvas {
   	text-align: center;
 	color: black;
 	padding-top: 20px;
-}
-
-.globe-container {
-	width: 600px;
-	clip-path: circle(300px at 300px 300px);
-	text-align: center;
-	margin: auto;
 }
 
 .header {
@@ -75,8 +67,53 @@ canvas {
 	align-self: flex-end;
 }
 
-.scene-container {
-	position: relative;
-	max-height: 600px !important;
-	max-width: 600px !important;
+.stats-block {
+	padding-top: 20px;
+	text-align: center;
+}
+
+@media all and (min-width:0px) and (max-width: 600px) {
+
+	.scene-container {
+		position: relative;
+		max-height: 320px !important;
+		max-width: 320px !important;
+	}
+
+	.globe-container {
+		width: 600px;
+		clip-path: circle(160px at 160px 160px);
+		text-align: center;
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	canvas {
+		display: block !important;
+		width: 320px !important;
+		height: 320px !important;
+	}
+}
+
+@media all and (min-width:601px) {
+
+	.scene-container {
+		position: relative;
+		max-height: 600px !important;
+		max-width: 600px !important;
+	}
+
+	.globe-container {
+		width: 600px;
+		clip-path: circle(300px at 300px 300px);
+		text-align: center;
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	canvas {
+		display: block !important;
+		width: 600px !important;
+		height: 600px !important;
+	}
 }

@@ -173,6 +173,10 @@ class Game extends React.Component {
 						ringColor={'blue'}
 					/>
 				</div>
+
+				<div className="stats-block">
+					Stats
+				</div>
 				
 			</div>
 		);
