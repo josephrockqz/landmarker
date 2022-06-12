@@ -112,6 +112,7 @@ class Game extends React.Component {
   	render() {
 		return (
 			<div className="main">
+
 				<div className="navbar">
 					<div className="nav-left">
 						<button className="nav-button"><TbHome size={30} /></button>
@@ -124,6 +125,7 @@ class Game extends React.Component {
 						<button className="nav-button"><IoMdSettings size={30} /></button>
 					</div>
 				</div>
+
 				<div className="game-prompt">
 					<h2 className="header">
 						Where is the <span className="landmark-name">{this.state.landmarks[this.state.landmarkIndex].properties.name}</span>?
@@ -136,35 +138,42 @@ class Game extends React.Component {
 						{!this.state.metricSystemBool ? ' miles' : ' km'}
 					</h4>
 				</div>
-				<Globe
-					backgroundColor='rgba(255,0,0,0)'
-					// bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-					globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
-					onGlobeClick={click => this.handleGlobeClick(click)}
-					// point stuff
-					pointsData={this.state.points}
-					pointAltitude="size"
-					pointColor="color"
-					// label stuff
-					labelsData={this.state.labels}
-					labelLat={d => d.properties.latitude}
-					labelLng={d => d.properties.longitude}
-					labelText={d => d.properties.name}
-					labelSize={1.0}
-					labelDotRadius={0.5}
-					labelColor={d => d.properties.color}
-					labelResolution={5}
-					// arc stuff
-					arcsData={this.state.arcs}
-					arcColor={d => d.arcColor}
-					arcLabel={d => !this.state.metricSystemBool ? Math.round(d.distance * 0.6213711922) + ' miles' : d.distance + ' km'}
-					// arcDashAnimateTime={() => Math.random() * 20 + 50}
-					// ring stuff
-					ringsData={this.state.rings}
-					ringLat={d => d.lat}
-					ringLng={d => d.lng}
-					ringColor={'blue'}
-				/>
+
+				<div className="globe-container">
+					<Globe
+						backgroundColor='rgba(255,0,0,0)'
+						// bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+						globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
+						onGlobeClick={click => this.handleGlobeClick(click)}
+						height={600}
+						width={600}
+						lineHoverPrecision={1}
+						// point stuff
+						pointsData={this.state.points}
+						pointAltitude="size"
+						pointColor="color"
+						// label stuff
+						labelsData={this.state.labels}
+						labelLat={d => d.properties.latitude}
+						labelLng={d => d.properties.longitude}
+						labelText={d => d.properties.name}
+						labelSize={1.0}
+						labelDotRadius={0.5}
+						labelColor={d => d.properties.color}
+						labelResolution={5}
+						// arc stuff
+						arcsData={this.state.arcs}
+						arcColor={d => d.arcColor}
+						arcLabel={d => !this.state.metricSystemBool ? Math.round(d.distance * 0.6213711922) + ' miles' : d.distance + ' km'}
+						// arcDashAnimateTime={() => Math.random() * 20 + 50}
+						// ring stuff
+						ringsData={this.state.rings}
+						ringLat={d => d.lat}
+						ringLng={d => d.lng}
+						ringColor={'blue'}
+					/>
+				</div>
+				
 			</div>
 		);
   	}

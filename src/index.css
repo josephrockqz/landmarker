@@ -5,6 +5,26 @@ body {
 	margin: 0;
 }
 
+canvas {
+	display: block !important;
+	width: 600px !important;
+	height: 600px !important;
+}
+
+.game-prompt {
+	background: transparent;
+  	text-align: center;
+	color: black;
+	padding-top: 20px;
+}
+
+.globe-container {
+	width: 600px;
+	clip-path: circle(300px at 300px 300px);
+	text-align: center;
+	margin: auto;
+}
+
 .header {
 	margin: 0px;
 }
@@ -55,9 +75,8 @@ body {
 	align-self: flex-end;
 }
 
-.game-prompt {
-	background: transparent;
-  	text-align: center;
-	color: black;
-	padding-top: 20px;
+.scene-container {
+	position: relative;
+	max-height: 600px !important;
+	max-width: 600px !important;
 }

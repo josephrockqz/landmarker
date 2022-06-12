@@ -1,15 +1,11 @@
-Make user interface taylored to mobile
-    (can disable certain features to make more manageable)
-    Important that game is smooth on mobile!
-Make game flow
-    Transition between landmarks
-    Game end (when all landmarks have been guessed)
-Limit how much you can zoom in/out on globe
-Change fonts
-
 Screens
     Home View
     Game View
+        Position globe better
+        Add stats box below globe
+        Add zoom in/out buttons
+        Transition between landmarks
+        Game end (when all landmarks have been guessed)
     Game Done View
         Stats for each selection, total miles, how it compares to others
     Setting View
@@ -19,8 +15,16 @@ Screens
         Language
         Globe theme and/or bkacground theme
     Stats View
-        (Distribution of all player scores)
+        Use cookies or local storage to keep track of individual Stats
+        Stats
+            Average distance for each landmark
+            Best 10-series score
+        Similar to speed miner
+        (Distribution of all player scores)?
 
+Make user interface taylored to mobile
+    (can disable certain features to make more manageable)
+    Important that game is smooth on mobile!
 
 Buy domain (landmarkgame.com)
 See how cloudflare and nginx handle a new domain
