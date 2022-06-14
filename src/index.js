@@ -6,6 +6,7 @@ import {
 	Route,
 	Routes,
 } from 'react-router-dom';
+
 import Game from './views/Game.js';
 import Home from './views/Home.js';
 import Settings from './views/Settings.js';

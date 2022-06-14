@@ -2,6 +2,8 @@ import React from 'react';
 
 import NavBar from '../components/NavBar.js';
 
+import { Button } from 'react-bootstrap';
+
 class Home extends React.Component {
     render() {
         return (
@@ -18,6 +20,9 @@ class Home extends React.Component {
                         The closer you are, the better your score.
                     </p>
                 </div>
+
+                
+                <Button>TODO: level select component</Button>
             </div>
         );
     }
