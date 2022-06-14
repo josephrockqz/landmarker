@@ -12,6 +12,8 @@ import Home from './views/Home.js';
 import Settings from './views/Settings.js';
 import PageNotFound from './views/PageNotFound.js';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // document.body.style.background = "rgb(2,0,36)";
 document.body.style.background = "linear-gradient(rgba(0,212,255,0.5) 0%, rgba(9,9,121,0.5) 35%, rgba(2,0,36,0.5) 100%)";
 const root = ReactDOM.createRoot(

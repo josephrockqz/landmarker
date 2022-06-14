@@ -10,6 +10,11 @@ html {
 	margin: 0;
 }
 
+.cell {
+	height: 40px;
+	padding: 0px !important;
+}
+
 .header {
 	margin: 0px;
 }
@@ -25,6 +30,15 @@ html {
 
 .landmark-name {
 	color: #DA4869;
+}
+
+.level {
+	text-align: center;
+	cursor: pointer;
+	height: 40px;
+	vertical-align: middle;
+	display: table-cell;
+	width: 344px;
 }
 
 .nav-button {
@@ -54,6 +68,10 @@ html {
 	align-self: flex-end;
 }
 
+.row {
+	margin: 4px;
+}
+
 .stats-block {
 	padding-top: 20px;
 	text-align: center;
@@ -72,6 +90,12 @@ html {
 		text-align: center;
 		margin: auto;
 		margin-top: 20px;
+	}
+
+	.levels-block {
+		padding-top: 20px;
+		margin: auto;
+		width: 320px;
 	}
 
 	.navbar {
@@ -115,6 +139,12 @@ html {
 		text-align: center;
 		margin: auto;
 		margin-top: 20px;
+	}
+
+	.levels-block {
+		padding-top: 20px;
+		margin: auto;
+		width: 320px;
 	}
 
 	.navbar {

@@ -25,7 +25,13 @@ Screens
     404 Not Found View
         Make visually appealing
 
+LevelSelect Component
+    Better styling
+    Send props to game component and push to router
+
 Use global state to save game progress
+
+Create functionality for series of landmarks array to be in randomized order at every level start.
 
 Make user interface taylored to mobile
     (can disable certain features to make more manageable)

@@ -11,14 +11,69 @@ class Game extends React.Component {
 			labels: [],
 			landmarkIndex: 0,
 			landmarks: [
-				{
-					properties: {
-						latitude: 27.1751,
+                // series 1
+                [
+                    {
+                        latitude: 27.1751,
 						longitude: 78.0421,
 						name: 'Taj Mahal',
 						color: 'black'
-					}
-				}
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                    {
+                        latitude: 27.1751,
+						longitude: 78.0421,
+						name: 'Taj Mahal',
+						color: 'black'
+                    },
+                ],
 			],
 			metricSystemBool: true,
 			nightModeBool: false,

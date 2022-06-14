@@ -1,8 +1,7 @@
 import React from 'react';
 
+import LevelSelect from '../components/LevelSelect.js';
 import NavBar from '../components/NavBar.js';
-
-import { Button } from 'react-bootstrap';
 
 class Home extends React.Component {
     render() {
@@ -22,7 +21,7 @@ class Home extends React.Component {
                 </div>
 
                 
-                <Button>TODO: level select component</Button>
+                <LevelSelect />
             </div>
         );
     }
