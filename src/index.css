@@ -10,13 +10,6 @@ html {
 	margin: 0;
 }
 
-.game-prompt {
-	background: transparent;
-  	text-align: center;
-	color: black;
-	padding-top: 20px;
-}
-
 .header {
 	margin: 0px;
 }
@@ -26,18 +19,12 @@ html {
 	margin-bottom: 10px;
 }
 
-.landmark-name {
-	color: #DA4869;
+.home-text {
+	text-align: left;
 }
 
-.navbar {
-	border-bottom: 2px solid black;
-	display: flex;
-  	flex-direction: row;
-  	flex-wrap: nowrap;
-  	justify-content: space-between;
-  	background-color: transparent;
-	padding-top: 20px;
+.landmark-name {
+	color: #DA4869;
 }
 
 .nav-button {
@@ -73,6 +60,31 @@ html {
 }
 
 @media all and (min-width:0px) and (max-width: 600px) {
+	canvas {
+		display: block !important;
+		width: 320px !important;
+		height: 320px !important;
+	}
+
+	.globe-container {
+		width: 320px;
+		clip-path: circle(160px at 160px 160px);
+		text-align: center;
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	.navbar {
+		border-bottom: 2px solid black;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		background-color: transparent;
+		padding-top: 20px;
+		width: 320px;
+		margin: auto;
+	}
 
 	.scene-container {
 		position: relative;
@@ -80,27 +92,21 @@ html {
 		max-width: 320px !important;
 	}
 
-	.globe-container {
-		width: 600px;
-		clip-path: circle(160px at 160px 160px);
+	.top-of-page {
+		background: transparent;
 		text-align: center;
+		color: black;
+		padding-top: 20px;
+		width: 320px;
 		margin: auto;
-		margin-top: 20px;
-	}
-
-	canvas {
-		display: block !important;
-		width: 320px !important;
-		height: 320px !important;
 	}
 }
 
 @media all and (min-width:601px) {
-
-	.scene-container {
-		position: relative;
-		max-height: 600px !important;
-		max-width: 600px !important;
+	canvas {
+		display: block !important;
+		width: 600px !important;
+		height: 600px !important;
 	}
 
 	.globe-container {
@@ -111,9 +117,30 @@ html {
 		margin-top: 20px;
 	}
 
-	canvas {
-		display: block !important;
-		width: 600px !important;
-		height: 600px !important;
+	.navbar {
+		border-bottom: 2px solid black;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		background-color: transparent;
+		padding-top: 20px;
+		width: 600px;
+		margin: auto;
+	}
+
+	.scene-container {
+		position: relative;
+		max-height: 600px !important;
+		max-width: 600px !important;
+	}
+
+	.top-of-page {
+		background: transparent;
+		text-align: center;
+		color: black;
+		padding-top: 20px;
+		width: 600px;
+		margin: auto;
 	}
 }

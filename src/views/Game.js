@@ -111,7 +111,7 @@ class Game extends React.Component {
 
                 <NavBar />
 
-				<div className="game-prompt">
+				<div className="top-of-page">
 					<h2 className="header">
 						Where is the <span className="landmark-name">{this.state.landmarks[this.state.landmarkIndex].properties.name}</span>?
 					</h2>
