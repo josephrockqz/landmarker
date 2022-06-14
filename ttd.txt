@@ -11,6 +11,8 @@ Screens
         Game end (when all landmarks have been guessed)
     Setting View
         Unit system
+        country borders toggle
+            Use polygon from react-globe.gl API
         Modes: daily mode, challenge mode, # of landmarks, difficulty
             (keep it simple)
         Language

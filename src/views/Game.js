@@ -86,9 +86,9 @@ class Game extends React.Component {
 	handleGlobeClick(click) {
 		if (this.state.landmarkIndex < this.state.landmarks.length) {
 			const lat1 = click.lat;
-			const lat2 = this.state.landmarks[this.state.landmarkIndex].properties.latitude;
+			const lat2 = this.state.landmarks[0][this.state.landmarkIndex].latitude;
 			const lng1 = click.lng;
-			const lng2 = this.state.landmarks[this.state.landmarkIndex].properties.longitude;
+			const lng2 = this.state.landmarks[0][this.state.landmarkIndex].longitude;
 
 			let point = {
 				lat: lat1,
@@ -103,7 +103,7 @@ class Game extends React.Component {
 			});
 			
 			let labels = this.state.labels.slice();
-			labels.push(this.state.landmarks[this.state.landmarkIndex]);
+			labels.push(this.state.landmarks[0][this.state.landmarkIndex]);
 			this.setState({
 				labels: labels
 			});
@@ -119,7 +119,7 @@ class Game extends React.Component {
 			const d = Math.round(R * c / 1000); // in km
 
 			let arc = {
-				arcLabel: this.state.landmarks[this.state.landmarkIndex].properties.name,
+				arcLabel: this.state.landmarks[0][this.state.landmarkIndex].name,
 				startLat: lat1,
 				startLng: lng1,
 				endLat: lat2,
@@ -168,7 +168,7 @@ class Game extends React.Component {
 
 				<div className="top-of-page">
 					<h2 className="header">
-						Where is the <span className="landmark-name">{this.state.landmarks[this.state.landmarkIndex].properties.name}</span>?
+						Where is the <span className="landmark-name">{this.state.landmarks[0][this.state.landmarkIndex].name}</span>?
 					</h2>
 					<h2 className="header-middle">
 						Locate on the globe
@@ -194,12 +194,12 @@ class Game extends React.Component {
 						pointColor="color"
 						// label stuff
 						labelsData={this.state.labels}
-						labelLat={d => d.properties.latitude}
-						labelLng={d => d.properties.longitude}
-						labelText={d => d.properties.name}
+						labelLat={d => d.latitude}
+						labelLng={d => d.longitude}
+						labelText={d => d.name}
 						labelSize={1.0}
 						labelDotRadius={0.5}
-						labelColor={d => d.properties.color}
+						labelColor={d => d.color}
 						labelResolution={5}
 						// arc stuff
 						arcsData={this.state.arcs}
