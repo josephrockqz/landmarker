@@ -1,26 +1,28 @@
 Screens
-    Home View
+    Home View (Information View?)
+        Instructions
+        Series select
+        How distance is calculated?
+        Link to Github
     Game View
-        Position globe better
         Add stats box below globe
-        Add zoom in/out buttons
+        Add zoom in/out buttons?
         Transition between landmarks
         Game end (when all landmarks have been guessed)
-    Game Done View
-        Stats for each selection, total miles, how it compares to others
     Setting View
         Unit system
         Modes: daily mode, challenge mode, # of landmarks, difficulty
             (keep it simple)
         Language
         Globe theme and/or bkacground theme
-    Stats View
+    Stats Component
+        Maybe a modal or popup - not view
         Use cookies or local storage to keep track of individual Stats
+            Similar to speed miner
         Stats
             Average distance for each landmark
-            Best 10-series score
-        Similar to speed miner
-        (Distribution of all player scores)?
+    404 Not Found View
+        Make visually appealing
 
 Make user interface taylored to mobile
     (can disable certain features to make more manageable)
