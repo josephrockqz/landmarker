@@ -8,8 +8,13 @@ import { TbHome } from 'react-icons/tb';
 import { IoMdSettings } from 'react-icons/io';
 import { TbChartPie3 } from 'react-icons/tb';
 
+import { UserContext } from "../index.js";
+
 export default function NavBar() {
     let navigate = useNavigate();
+    const [ state, dispatch ] = React.useContext(UserContext)
+	// console.log(state);
+    // dispatch({ type: "toggle_metricSystemBool" });
 
     return (
         <div className="navbar">

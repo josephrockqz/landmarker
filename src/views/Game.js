@@ -3,6 +3,8 @@ import Globe from 'react-globe.gl';
 
 import NavBar from '../components/NavBar.js';
 
+import { UserContext } from "../index.js";
+
 class Game extends React.Component {
 	constructor(props) {
 		super(props);
