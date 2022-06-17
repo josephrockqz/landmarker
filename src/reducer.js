@@ -1,6 +1,31 @@
 export const reducer = (state, action) => {
     switch (action.type) {
-        case "toggle_metricSystemBool":
+        case "add_arc":
+            return {
+                ...state,
+                arcs: action.payload
+            }
+        case "add_label":
+            return {
+                ...state,
+                labels: action.payload
+            }
+        case "add_point":
+            return {
+                ...state,
+                points: action.payload
+            }
+        case "add_ring":
+            return {
+                ...state,
+                rings: action.payload
+            }
+        case "remove_rings":
+            return {
+                ...state,
+                rings: action.payload
+            }
+        case "toggle_metric_system_bool":
             return {
                 ...state,
                 metricSystemBool: !state.metricSystemBool
@@ -30,5 +55,6 @@ export const initialState = {
 	nightModeBool: false,
 	points: [],
 	rings: [],
+    seriesIndex: 0,
 	totalKilometers: 0,
 }
