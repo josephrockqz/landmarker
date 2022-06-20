@@ -3,36 +3,50 @@ export const reducer = (state, action) => {
         case "add_arc":
             return {
                 ...state,
-                arcs: action.payload
-            }
+                arcs: [...state.arcs, action.payload]
+            };
+        case "add_distance":
+            console.log("add distance");
+            return {
+                ...state,
+                totalKilometers: state.totalKilometers + action.payload
+            };
         case "add_label":
+            console.log("add label");
             return {
                 ...state,
-                labels: action.payload
-            }
+                labels: [...state.labels, action.payload]
+            };
         case "add_point":
+            console.log("add point");
             return {
                 ...state,
-                points: action.payload
-            }
+                points: [...state.points, action.payload]
+            };
         case "add_ring":
+            console.log("add ring");
             return {
                 ...state,
-                rings: action.payload
-            }
+                rings: [...state.rings, action.payload]
+            };
+        case "increment_landmark_index":
+            return {
+                ...state,
+                landmarkIndex: state.landmarkIndex + 1
+            };
         case "remove_rings":
             return {
                 ...state,
-                rings: action.payload
-            }
+                rings: []
+            };
         case "toggle_metric_system_bool":
             return {
                 ...state,
                 metricSystemBool: !state.metricSystemBool
-            }
+            };
   
         default:
-            return state
+            return state;
     }
 }
   

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import Globe from 'react-globe.gl';
 
 import NavBar from '../components/NavBar.js';
@@ -6,14 +6,17 @@ import NavBar from '../components/NavBar.js';
 import { UserContext } from "../index.js";
 
 export default function Game() {
-    const [ state, dispatch ] = React.useContext(UserContext)
-	console.log(state);
+	const [ state, dispatch ] = useContext(UserContext);
+
+	// useEffect(() => {
+	// 	console.log(state);
+	// });
 
 	const handleGlobeClick = useCallback(({ lat: lat1, lng: lng1} ) => {
 		if (state.landmarkIndex < state.landmarks.length) {
 			const lat2 = state.landmarks[state.seriesIndex][state.landmarkIndex].latitude;
 			const lng2 = state.landmarks[state.seriesIndex][state.landmarkIndex].longitude;
-			console.log(state.points);
+			console.log(state);
 
 			let point = {
 				lat: lat1,
@@ -21,55 +24,47 @@ export default function Game() {
 				size: 0.1,
 				color: 'gold'
 			};
-			let points = state.points.slice();
-			points.push(point);
-			dispatch({ type: "add_point", payload: points });
+			dispatch({ type: "add_point", payload: point });
+			console.log(state.points);
 			
-			// let labels = state.labels.slice();
-			// labels.push(state.landmarks[state.seriesIndex][state.landmarkIndex]);
-			// dispatch({ type: "add_label", payload: labels });
+			dispatch({ type: "add_label", payload: state.landmarks[state.seriesIndex][state.landmarkIndex] });
 
-			// // calculate great-circle distance using haversine formula
-			// const R = 6371e3; // metres
-			// const φ1 = lat1 * Math.PI/180; // φ, λ in radians
-			// const φ2 = lat2 * Math.PI/180;
-			// const Δφ = (lat2-lat1) * Math.PI/180;
-			// const Δλ = (lng2-lng1) * Math.PI/180;
-			// const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ/2) * Math.sin(Δλ/2);
-			// const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-			// const d = Math.round(R * c / 1000); // in km
+			// calculate great-circle distance using haversine formula
+			const R = 6371e3; // metres
+			const φ1 = lat1 * Math.PI/180; // φ, λ in radians
+			const φ2 = lat2 * Math.PI/180;
+			const Δφ = (lat2-lat1) * Math.PI/180;
+			const Δλ = (lng2-lng1) * Math.PI/180;
+			const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ/2) * Math.sin(Δλ/2);
+			const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+			const d = Math.round(R * c / 1000); // in km
 
-			// let arc = {
-			// 	arcLabel: state.landmarks[state.seriesIndex][state.landmarkIndex].name,
-			// 	startLat: lat1,
-			// 	startLng: lng1,
-			// 	endLat: lat2,
-			// 	endLng: lng2,
-			// 	color: 'blue',
-			// 	distance: d,
-			// };
-			// let arcs = state.arcs.slice();
-			// arcs.push(arc);
-			// dispatch({ type: "add_arc", payload: arcs });
+			dispatch({ type: "add_distance", payload: d });
 
-			// let ring = {
-			// 	lat: lat1,
-			// 	lng: lng1,
-			// };
-			// let rings = state.rings.slice();
-			// rings.push(ring);
-			// dispatch({ type: "add_ring", payload: rings });
+			let arc = {
+				arcLabel: state.landmarks[state.seriesIndex][state.landmarkIndex].name,
+				startLat: lat1,
+				startLng: lng1,
+				endLat: lat2,
+				endLng: lng2,
+				color: 'blue',
+				distance: d,
+			};
+			dispatch({ type: "add_arc", payload: arc });
+
+			let ring = {
+				lat: lat1,
+				lng: lng1,
+			};
+			dispatch({ type: "add_ring", payload: ring });
 
 			console.log(state.points);
-			// setTimeout(() => {
-			// 	rings = [];
-			// 	dispatch({ type: "remove_rings", payload: rings });
-			// }, "3000");
+			setTimeout(() => {
+				dispatch({ type: "remove_rings" });
+			}, "3000");
 
-			// if (this.state.landmarkIndex < this.state.landmarks.length - 1) {
-			// 	this.setState({
-			// 		landmarkIndex: this.state.landmarkIndex + 1
-			// 	});
+			// if (state.landmarkIndex < 9) {
+			// 	dispatch({ type: "increment_landmark_index" });
 			// }
 		}
 	}, []);
