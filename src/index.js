@@ -23,7 +23,6 @@ export const UserContext = React.createContext({
 
 export const UserProvider = ({ children }) => {
 	const [state, dispatch] = React.useReducer(reducer, initialState);
-	console.log(state);
   
 	return (
 	  <UserContext.Provider value={[ state, dispatch ]}>

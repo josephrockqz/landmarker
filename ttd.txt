@@ -4,6 +4,7 @@ Screens
         Series select
         How distance is calculated?
         Link to Github
+        Mention how stats are kept?
     Game View
         Add stats box below globe
         Add zoom in/out buttons?

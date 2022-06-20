@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Globe from 'react-globe.gl';
 
 import NavBar from '../components/NavBar.js';
@@ -8,15 +8,12 @@ import { UserContext } from "../index.js";
 export default function Game() {
 	const [ state, dispatch ] = useContext(UserContext);
 
-	// useEffect(() => {
-	// 	console.log(state);
-	// });
-
-	const handleGlobeClick = useCallback(({ lat: lat1, lng: lng1} ) => {
-		if (state.landmarkIndex < state.landmarks.length) {
+	const handleGlobeClick = click => {
+		if (state.landmarkIndex < 10) {
+			const lat1 = click.lat;
+			const lng1 = click.lng;
 			const lat2 = state.landmarks[state.seriesIndex][state.landmarkIndex].latitude;
 			const lng2 = state.landmarks[state.seriesIndex][state.landmarkIndex].longitude;
-			console.log(state);
 
 			let point = {
 				lat: lat1,
@@ -25,8 +22,7 @@ export default function Game() {
 				color: 'gold'
 			};
 			dispatch({ type: "add_point", payload: point });
-			console.log(state.points);
-			
+
 			dispatch({ type: "add_label", payload: state.landmarks[state.seriesIndex][state.landmarkIndex] });
 
 			// calculate great-circle distance using haversine formula
@@ -38,7 +34,6 @@ export default function Game() {
 			const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ/2) * Math.sin(Δλ/2);
 			const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 			const d = Math.round(R * c / 1000); // in km
-
 			dispatch({ type: "add_distance", payload: d });
 
 			let arc = {
@@ -58,16 +53,15 @@ export default function Game() {
 			};
 			dispatch({ type: "add_ring", payload: ring });
 
-			console.log(state.points);
 			setTimeout(() => {
 				dispatch({ type: "remove_rings" });
 			}, "3000");
 
-			// if (state.landmarkIndex < 9) {
-			// 	dispatch({ type: "increment_landmark_index" });
-			// }
+			if (state.landmarkIndex < 9) {
+				dispatch({ type: "increment_landmark_index" });
+			}
 		}
-	}, []);
+	};
 
   	return (
 		<div className="main">
@@ -76,7 +70,7 @@ export default function Game() {
 
 			<div className="top-of-page">
 				<h2 className="header">
-					Where is the <span className="landmark-name">{state.landmarks[0][state.landmarkIndex].name}</span>?
+					Where is {state.landmarks[0][state.landmarkIndex].the_bool ? "the" : ""} <span className="landmark-name">{state.landmarks[0][state.landmarkIndex].name}</span>?
 				</h2>
 				<h2 className="header-middle">
 					Locate on the globe
