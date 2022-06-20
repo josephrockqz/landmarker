@@ -1,8 +1,6 @@
 import React from 'react';
 
-import {
-    useNavigate
-} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { TbHome } from 'react-icons/tb';
 import { IoMdSettings } from 'react-icons/io';

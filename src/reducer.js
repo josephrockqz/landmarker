@@ -40,6 +40,11 @@ export const reducer = (state, action) => {
                 ...state,
                 metricSystemBool: !state.metricSystemBool
             };
+        case "update_series_index":
+            return {
+                ...state,
+                seriesIndex: action.payload
+            }
   
         default:
             return state;

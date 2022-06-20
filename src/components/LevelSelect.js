@@ -1,8 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Table } from 'react-bootstrap';
 
+import { UserContext } from "../index.js";
+
 export default function LevelSelect() {
+    let navigate = useNavigate();
+    const [ state, dispatch ] = React.useContext(UserContext)
+
     const createLevels = () => {
         let rows = []
         for (let i = 1; i < 6; i++) {
@@ -18,7 +24,8 @@ export default function LevelSelect() {
     }
 
     const handleClick = (i) => {
-        console.log(i);
+        dispatch({ type: "update_series_index", payload: i - 1 });
+        navigate("/game");
     }
 
     return (

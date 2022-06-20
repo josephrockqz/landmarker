@@ -18,6 +18,7 @@ Screens
             (keep it simple)
         Language
         Globe theme and/or bkacground theme
+        Theme (dark mode has better resolution picture)
     Stats Component
         Maybe a modal or popup - not view
         Use cookies or local storage to keep track of individual Stats
