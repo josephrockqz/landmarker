@@ -129,6 +129,6 @@ export const initialState = {
 	nightModeBool: false,
 	points: [],
 	rings: [],
-    seriesIndex: 0,
+    seriesIndex: -1,
 	totalKilometers: 0,
 }

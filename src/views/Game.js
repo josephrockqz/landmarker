@@ -9,6 +9,11 @@ export default function Game() {
 	const [ state, dispatch ] = useContext(UserContext);
 
 	const handleGlobeClick = click => {
+		// Game view should not be here if seriesIndex is not 0-4
+		if (state.seriesIndex < 0 || state.seriesIndex > 5) {
+			return;
+		}
+		// if landmarkIndex is greater than 10, the series should be over
 		if (state.landmarkIndex < 10) {
 			const lat1 = click.lat;
 			const lng1 = click.lng;
@@ -57,8 +62,13 @@ export default function Game() {
 				dispatch({ type: "remove_rings" });
 			}, "3000");
 
+			// next landmark
 			if (state.landmarkIndex < 9) {
 				dispatch({ type: "increment_landmark_index" });
+			}
+			// end series
+			else if (state.landmarkIndex == 9) {
+				alert("game is done");
 			}
 		}
 	};
