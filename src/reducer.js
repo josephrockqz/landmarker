@@ -8,6 +8,7 @@ export const reducer = (state, action) => {
         case "add_distance":
             return {
                 ...state,
+                seriesDistances: [...state.seriesDistances, action.payload],
                 totalKilometers: state.totalKilometers + action.payload
             };
         case "add_label":
@@ -134,6 +135,7 @@ export const initialState = {
 	nightModeBool: false,
 	points: [],
 	rings: [],
+    seriesDistances: [],
     seriesIndex: -1,
 	totalKilometers: 0,
 }

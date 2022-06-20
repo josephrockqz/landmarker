@@ -3,6 +3,7 @@ import Globe from 'react-globe.gl';
 
 import GameHeader from '../components/GameHeader.js';
 import NavBar from '../components/NavBar.js';
+import SeriesStats from '../components/SeriesStats.js';
 
 import { UserContext } from "../index.js";
 
@@ -114,9 +115,7 @@ export default function Game() {
 				/>
 			</div>
 
-			<div className="stats-block">
-				Stats
-			</div>
+			<SeriesStats />
 				
 		</div>
 	);
