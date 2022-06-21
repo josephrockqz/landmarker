@@ -27,7 +27,7 @@ export default function SeriesStats() {
     }
 
     return (
-        <div className="levels-block">
+        <div className="stats-block">
             <Table hover bordered variant="dark">
                 <tbody>
                     {createRows()}

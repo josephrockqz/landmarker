@@ -66,7 +66,7 @@ export default function Game() {
 				if (state.landmarkIndex === 9) {
 					alert("game is done");
 				}
-			}, "3000");
+			}, "1000");
 
 			// next landmark
 			dispatch({ type: "increment_landmark_index" });

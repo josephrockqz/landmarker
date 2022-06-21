@@ -1,7 +1,5 @@
 Screens
     Home View (Information View?)
-        Instructions
-        Series select
         How distance is calculated?
         Link to Github
         Mention how stats are kept?
@@ -35,7 +33,6 @@ GameHeader component
     Make level select button after end of series
 
 SeriesStats Component
-    Make html background rendering uniform
     Make row click focus on respective coordinates
 
 Make user interface taylored to mobile
