@@ -21,6 +21,12 @@ html {
 	margin: 0;
 }
 
+.arrow-icon {
+	text-align: center;
+	margin: 0 auto;
+	height: 72px;
+}
+
 .cell {
 	height: 40px;
 	padding: 0px !important;
@@ -86,11 +92,6 @@ html {
 
 .row {
 	margin: 4px;
-}
-
-.stats-block {
-	padding-top: 20px;
-	text-align: center;
 }
 
 .stats-div {
@@ -159,7 +160,6 @@ html {
 		padding-top: 20px;
 		margin: auto;
 		width: 320px;
-		height: 480px;
 	}
 
 	.top-of-page {
@@ -229,7 +229,6 @@ html {
 		padding-top: 20px;
 		margin: auto;
 		width: 320px;
-		height: 480px;
 	}
 
 	.top-of-page {

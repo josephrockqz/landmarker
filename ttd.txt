@@ -42,5 +42,7 @@ Make user interface taylored to mobile
 
 Edit readme.md file
 
+Configure meta tags
+
 Buy domain (landmarkgame.com)
 See how cloudflare and nginx handle a new domain
