@@ -74,7 +74,7 @@ export default function Game() {
 	};
 
   	return (
-		<div className="main">
+		<div>
 
             <NavBar />
 
@@ -83,7 +83,6 @@ export default function Game() {
 			<div className="globe-container">
 				<Globe
 					backgroundColor='rgba(255,0,0,0)'
-					// bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
 					globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
 					onGlobeClick={handleGlobeClick}
 					height={600}

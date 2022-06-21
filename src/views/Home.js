@@ -1,4 +1,5 @@
 import React from 'react';
+import Globe from 'react-globe.gl';
 
 import LevelSelect from '../components/LevelSelect.js';
 import NavBar from '../components/NavBar.js';
@@ -7,13 +8,17 @@ import { DiGithubBadge } from "react-icons/di";
 import { BiCopyright } from "react-icons/bi";
 
 export default function Home() {
+    const handleGlobeClick = () => {
+
+    }
+
     const linkGithub = () => {
         console.log("hello");
         window.open('https://github.com/josephrockqz/landmarker', '_blank');
     };
 
     return (
-        <div>
+        <div style={{textAlign: 'center'}}>
             <NavBar />
                 
             <div className="top-of-page">
@@ -32,8 +37,13 @@ export default function Home() {
                 </p>
             </div>
 
-            
-
+            <img
+                src="https://freesvg.org/img/earth-globe-dan-gerhrad-05r.png"
+                alt="Globe"
+                height="200"
+                width="200"
+            >
+            </img>
             <div className="top-of-page">
                 <p className="home-text">
                     Note: personal stats will not be saved if local storage is disabled.

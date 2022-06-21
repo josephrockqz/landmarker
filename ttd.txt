@@ -1,6 +1,4 @@
 Screens
-    Home View (Information View?)
-        Put a little glob animation between Haversine and level prompt
     Game View
         Add zoom in/out buttons?
         Game end (when all landmarks have been guessed)
