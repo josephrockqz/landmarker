@@ -6,7 +6,9 @@ export default function Settings() {
     return (
         <div>
             <NavBar />
-            Settings
+            <div className="top-of-page">
+                
+            </div>
         </div>
     );
 };

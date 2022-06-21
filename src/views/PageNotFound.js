@@ -6,7 +6,8 @@ export default function PageNotFound() {
     return (
         <div>
             <NavBar />
-            Page Not Found
+            Uh Oh ... looks like this page does not exist
+            Check the url path :/
         </div>
     );
 };

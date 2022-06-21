@@ -13,7 +13,7 @@ Screens
         Globe theme and/or background theme
         Theme (dark mode has better resolution picture)
     Stats Component
-        Maybe a modal or popup - not view
+        Maybe a modal or popup instead of view
         Use cookies or local storage to keep track of individual Stats
             Similar to speed miner
         Stats
@@ -23,8 +23,6 @@ Screens
         Make visually appealing
 
 Create functionality for series of landmarks array to be in randomized order at every level start (?)
-
-Create Globe Component (?)
 
 GameHeader component
     Make level select button after end of series
@@ -41,6 +39,8 @@ Make user interface taylored to mobile
 Edit readme.md file
 
 Configure meta tags
+Change logo on tab
+Get rid of public icons
 
 Buy domain (landmarkgame.com)
 See how cloudflare and nginx handle a new domain
