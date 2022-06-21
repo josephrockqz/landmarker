@@ -9,4 +9,4 @@ export default function PageNotFound() {
             Page Not Found
         </div>
     );
-}
+};

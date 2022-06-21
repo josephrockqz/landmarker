@@ -50,7 +50,7 @@ export const reducer = (state, action) => {
         default:
             return state;
     }
-}
+};
   
 export const initialState = {
     arcs: [],
@@ -138,4 +138,4 @@ export const initialState = {
     seriesDistances: [],
     seriesIndex: -1,
 	totalKilometers: 0,
-}
+};

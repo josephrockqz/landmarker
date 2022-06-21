@@ -9,4 +9,4 @@ export default function Settings() {
             Settings
         </div>
     );
-}
+};

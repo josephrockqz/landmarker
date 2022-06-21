@@ -1,11 +1,10 @@
 Screens
     Home View (Information View?)
-        How distance is calculated?
-        Link to Github
-        Mention how stats are kept?
+        Put a little glob animation between Haversine and level prompt
     Game View
         Add zoom in/out buttons?
         Game end (when all landmarks have been guessed)
+        Make zooming and panning faster
     Setting View
         Unit system
         country borders toggle
@@ -40,6 +39,8 @@ Make user interface taylored to mobile
     Important that game is smooth on mobile!
     Center content in mobile
     Fix bottom of screen
+
+Edit readme.md file
 
 Buy domain (landmarkgame.com)
 See how cloudflare and nginx handle a new domain

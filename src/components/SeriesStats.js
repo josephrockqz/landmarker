@@ -35,4 +35,4 @@ export default function SeriesStats() {
             </Table>
         </div>
     );
-}
+};

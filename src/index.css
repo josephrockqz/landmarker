@@ -26,6 +26,11 @@ html {
 	padding: 0px !important;
 }
 
+.footer-span {
+	display: inline-flex;
+  	align-items: center;
+}
+
 .header {
 	margin: 0px;
 }
@@ -104,6 +109,20 @@ html {
 		height: 320px !important;
 	}
 
+	.footer-div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		margin: auto;
+		background: transparent;
+		text-align: center;
+		color: black;
+		padding-top: 20px;
+		width: 320px;
+		margin: 0 auto;
+	}
+
 	.globe-container {
 		width: 320px;
 		clip-path: circle(160px at 160px 160px);
@@ -158,6 +177,20 @@ html {
 		display: block !important;
 		width: 600px !important;
 		height: 600px !important;
+	}
+
+	.footer-div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		margin: auto;
+		background: transparent;
+		text-align: center;
+		color: black;
+		padding-top: 20px;
+		width: 600px;
+		margin: 0 auto;
 	}
 
 	.globe-container {
