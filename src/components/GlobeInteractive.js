@@ -73,7 +73,6 @@ export default function GlobeInteractive() {
 			backgroundColor='rgba(255,0,0,0)'
 			bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
 			globeImageUrl={state.darkModeBool ? "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg" : "//unpkg.com/three-globe/example/img/earth-day.jpg"}
-        	// backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
 			onGlobeClick={handleGlobeClick}
 			height={600}
 			width={600}
@@ -89,13 +88,12 @@ export default function GlobeInteractive() {
 			labelText={d => d.name}
 			labelSize={1.0}
 			labelDotRadius={0.5}
-			labelColor={d => d.color}
+			labelColor={() => state.darkModeBool ? 'rgba(255, 255, 255, 0.75)' : 'rgba(0, 0, 0, 0.75)'}
 			labelResolution={5}
 			// arc stuff
 			arcsData={state.arcs}
 			arcColor={d => d.arcColor}
 			arcLabel={d => !state.metricSystemBool ? Math.round(d.distance * 0.6213711922) + ' miles' : d.distance + ' km'}
-			// arcDashAnimateTime={() => Math.random() * 20 + 50}
 			// ring stuff
 			ringsData={state.rings}
 			ringLat={d => d.lat}

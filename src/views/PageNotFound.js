@@ -6,8 +6,20 @@ export default function PageNotFound() {
     return (
         <div>
             <NavBar />
-            Uh Oh ... looks like this page does not exist
-            Check the url path :/
+            
+            <div className="top-of-page">
+                <p style={{fontSize: "120px"}}>
+                    404
+                </p>
+                <p style={{fontSize: "22px"}}>
+                    Page not found
+                </p>
+            </div>
+
+            <div className="top-of-page">
+                Looks like this page does not exist. Check the url path
+            </div>
+            
         </div>
     );
 };
