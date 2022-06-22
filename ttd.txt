@@ -4,8 +4,6 @@ Screens
         Game end (when all landmarks have been guessed)
         Make zooming and panning faster
     Setting View
-        country borders toggle
-            Use polygon from react-globe.gl API
         Theme (dark mode has better resolution picture)
     Stats Component
         Maybe a modal or popup instead of view
@@ -29,6 +27,8 @@ Make language toggle button actually change words
     Use functions embedded in html that changes words based on state.language
 
 Implement global function to convert km to miles (?)
+
+Look at Custom Globe Styling example
 
 Make user interface taylored to mobile
     (can disable certain features to make more manageable)

@@ -9,6 +9,19 @@ import { UserContext } from "../index.js";
 
 export default function Settings() {
     const [ state, dispatch ] = useContext(UserContext);
+
+    const borders = () => {
+        if (state.bordersBool) {
+            return (
+                <div className="top-of-page" style={{color: "red", paddingBottom: "20px"}}>
+                    Borders mode comings soon!
+                </div>
+            );
+        } else {
+            return;
+        }
+        
+    };
     
     return (
         <div>
@@ -80,6 +93,8 @@ export default function Settings() {
                 </div>
 
             </div>
+
+            {borders()}
 
             <GlobeStart />
 
