@@ -1,6 +1,9 @@
-import React, { useNavigate } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function GlobeStart() {
+    let navigate = useNavigate();
+
     return (
         <div style={{textAlign: 'center'}}>
             <img
@@ -8,6 +11,8 @@ export default function GlobeStart() {
                 alt="Globe"
                 height="200"
                 width="200"
+                onClick={() => { navigate("/game"); }}
+                style={{cursor: "pointer"}}
             >
             </img>
             <p style={{paddingTop: "20px"}}>
