@@ -3,8 +3,6 @@ Screens
         Add zoom in/out buttons?
         Game end (when all landmarks have been guessed)
         Make zooming and panning faster
-    Setting View
-        Theme (dark mode has better resolution picture)
     Stats Component
         Maybe a modal or popup instead of view
         Use cookies or local storage to keep track of individual Stats

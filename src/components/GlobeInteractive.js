@@ -2,19 +2,8 @@ import React, { useContext } from "react";
 import Globe from 'react-globe.gl';
 import { UserContext } from "../index.js";
 
-import * as THREE from 'three';
-
 export default function GlobeInteractive() {
     const [ state, dispatch ] = useContext(UserContext);
-
-	// custom globe material
-    const globeMaterial = new THREE.MeshPhongMaterial();
-    globeMaterial.bumpScale = 10;
-    new THREE.TextureLoader().load('//unpkg.com/three-globe/example/img/earth-water.png', texture => {
-      globeMaterial.specularMap = texture;
-      globeMaterial.specular = new THREE.Color('grey');
-      globeMaterial.shininess = 15;
-    });
 
     const handleGlobeClick = click => {
 		// Game view should not be here if seriesIndex is not 0-4
@@ -83,8 +72,7 @@ export default function GlobeInteractive() {
         <Globe
 			backgroundColor='rgba(255,0,0,0)'
 			bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-			globeImageUrl={state.darkModeBool ? "//unpkg.com/three-globe/example/img/earth-night.jpg" : "//unpkg.com/three-globe/example/img/earth-day.jpg"}
-			globeMaterial={globeMaterial}
+			globeImageUrl={state.darkModeBool ? "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg" : "//unpkg.com/three-globe/example/img/earth-day.jpg"}
         	// backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
 			onGlobeClick={handleGlobeClick}
 			height={600}
