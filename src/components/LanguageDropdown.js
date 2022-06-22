@@ -8,16 +8,16 @@ export default function LanguageDropdown() {
     const handleClick = num =>  {
         switch(num) {
             case 1:
-                dispatch({ type: "update_language", payload: "English"});
+                dispatch({ type: "update_language", payload: "English" });
                 return;
             case 2:
-                dispatch({ type: "update_language", payload: "Spanish"});
+                dispatch({ type: "update_language", payload: "Spanish" });
                 return;
             case 3:
-                dispatch({ type: "update_language", payload: "Italian"});
+                dispatch({ type: "update_language", payload: "Italian" });
                 return;
             case 4:
-                dispatch({ type: "update_language", payload: "Russian"});
+                dispatch({ type: "update_language", payload: "Russian" });
                 return;
             default:
                 return;

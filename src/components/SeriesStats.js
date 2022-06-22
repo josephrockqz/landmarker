@@ -14,7 +14,7 @@ export default function SeriesStats() {
                 <td key={i} className="stats-cell">
                     <div className="stats-div" onClick={() => handleClick(i)}>
                         <span>{state.landmarks[state.seriesIndex][i].name}: </span>
-                        <span>{state.seriesDistances[i]} {!state.metricSystemBool ? ' miles' : ' km'}</span>
+                        <span>{!state.metricSystemBool ? Math.round(state.seriesDistances[i] * 0.6213711922) : state.seriesDistances[i]} {!state.metricSystemBool ? ' miles' : ' km'}</span>
                     </div>
                 </td>
             </tr>);

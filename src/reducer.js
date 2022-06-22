@@ -36,10 +36,10 @@ export const reducer = (state, action) => {
                 ...state,
                 rings: []
             };
-        case "toggle_metric_system_bool":
+        case "update_borders":
             return {
                 ...state,
-                metricSystemBool: !state.metricSystemBool
+                bordersBool: !state.bordersBool
             };
         case "update_language":
             return {
@@ -51,6 +51,16 @@ export const reducer = (state, action) => {
                 ...state,
                 seriesIndex: action.payload
             };
+        case "update_theme":
+            return {
+                ...state,
+                darkModeBool: !state.darkModeBool
+            };
+        case "update_units":
+            return {
+                ...state,
+                metricSystemBool: !state.metricSystemBool
+            };
         
         default:
             return state;
@@ -59,6 +69,8 @@ export const reducer = (state, action) => {
   
 export const initialState = {
     arcs: [],
+    bordersBool: false,
+    darkModeBool: false,
 	labels: [],
 	landmarkIndex: 0,
 	landmarks: [
@@ -137,7 +149,7 @@ export const initialState = {
         ],
 	],
     language: 'English',
-	metricSystemBool: true,
+	metricSystemBool: false,
 	nightModeBool: false,
 	points: [],
 	rings: [],
