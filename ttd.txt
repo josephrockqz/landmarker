@@ -6,9 +6,6 @@ Screens
     Setting View
         country borders toggle
             Use polygon from react-globe.gl API
-        Modes: daily mode, challenge mode, # of landmarks, difficulty
-            (keep it simple)
-        Globe theme and/or background theme
         Theme (dark mode has better resolution picture)
     Stats Component
         Maybe a modal or popup instead of view

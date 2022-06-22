@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import GlobeStart from '../components/GlobeStart.js';
 import LanguageDropdown from '../components/LanguageDropdown.js';
 import NavBar from '../components/NavBar.js';
 
@@ -79,6 +80,9 @@ export default function Settings() {
                 </div>
 
             </div>
+
+            <GlobeStart />
+
         </div>
     );
 };
