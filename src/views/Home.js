@@ -1,5 +1,4 @@
 import React from 'react';
-import Globe from 'react-globe.gl';
 
 import LevelSelect from '../components/LevelSelect.js';
 import NavBar from '../components/NavBar.js';
@@ -8,10 +7,6 @@ import { DiGithubBadge } from "react-icons/di";
 import { BiCopyright } from "react-icons/bi";
 
 export default function Home() {
-    const handleGlobeClick = () => {
-
-    }
-
     const linkGithub = () => {
         console.log("hello");
         window.open('https://github.com/josephrockqz/landmarker', '_blank');

@@ -41,12 +41,17 @@ export const reducer = (state, action) => {
                 ...state,
                 metricSystemBool: !state.metricSystemBool
             };
+        case "update_language":
+            return {
+                ...state,
+                language: action.payload
+            };
         case "update_series_index":
             return {
                 ...state,
                 seriesIndex: action.payload
-            }
-  
+            };
+        
         default:
             return state;
     }
@@ -131,6 +136,7 @@ export const initialState = {
             },
         ],
 	],
+    language: 'English',
 	metricSystemBool: true,
 	nightModeBool: false,
 	points: [],
