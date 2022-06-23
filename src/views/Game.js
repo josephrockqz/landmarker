@@ -4,6 +4,7 @@ import { UserContext } from "../index.js";
 
 import GameHeader from '../components/GameHeader.js';
 import GlobeInteractive from '../components/GlobeInteractive.js';
+import LevelDisplay from "../components/LevelDisplay.js";
 import LevelSelect from "../components/LevelSelect.js";
 import NavBar from '../components/NavBar.js';
 import SeriesStats from '../components/SeriesStats.js';
@@ -33,6 +34,8 @@ export default function Game() {
 			<div className="globe-container">
 				<GlobeInteractive />
 			</div>
+
+			<LevelDisplay />
 
 			<SeriesStats />
 
