@@ -1,22 +1,19 @@
 Screens
-    Game View
-        Add zoom in/out buttons?
-        Game end (when all landmarks have been guessed)
-        Make zooming and panning faster
     Stats Component
-        Maybe a modal or popup instead of view
         Use cookies or local storage to keep track of individual Stats
             Similar to speed miner
         Stats
-            Average distance for each landmark
+            Average total distance for each level
+            Average distance for each landmark across all levels
         Bootstrap figure?
 
 Display level on game screen above series stats
 
 Create functionality for series of landmarks array to be in randomized order at every level start (?)
 
-GameHeader component
-    Make level select button after end of series
+Logic after series is done
+    May need to change GameHeader component
+    Can re-prompt level selection modal
 
 SeriesStats Component
     Make row click focus on respective coordinates
@@ -24,9 +21,7 @@ SeriesStats Component
 Make language toggle button actually change words
     Use functions embedded in html that changes words based on state.language
 
-Implement global function to convert km to miles (?)
-
-Look at Custom Globe Styling example
+Look into cookies errors
 
 Make user interface taylored to mobile
     (can disable certain features to make more manageable)

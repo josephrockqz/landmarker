@@ -1,11 +1,10 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
 
 import { UserContext } from "../index.js";
 
 export default function SeriesStats() {
-    const [ state, dispatch ] = React.useContext(UserContext)
+    const [ state, ] = React.useContext(UserContext);
 
     const createRows = () => {
         let rows = []
