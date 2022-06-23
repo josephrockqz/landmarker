@@ -11,6 +11,8 @@ Screens
             Average distance for each landmark
         Bootstrap figure?
 
+Display level on game screen above series stats
+
 Create functionality for series of landmarks array to be in randomized order at every level start (?)
 
 GameHeader component

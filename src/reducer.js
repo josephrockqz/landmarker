@@ -26,10 +26,25 @@ export const reducer = (state, action) => {
                 ...state,
                 rings: [...state.rings, action.payload]
             };
+        case "close_levels_modal":
+            return {
+                ...state,
+                levelsModalBool: false
+            };
+        case "close_stats_modal":
+            return {
+                ...state,
+                statsModalBool: false
+            };
         case "increment_landmark_index":
             return {
                 ...state,
                 landmarkIndex: state.landmarkIndex + 1
+            };
+        case "open_levels_modal":
+            return {
+                ...state,
+                levelsModalBool: true
             };
         case "remove_rings":
             return {
@@ -149,11 +164,13 @@ export const initialState = {
         ],
 	],
     language: 'English',
+    levelsModalBool: true,
 	metricSystemBool: false,
 	nightModeBool: false,
 	points: [],
 	rings: [],
     seriesDistances: [],
     seriesIndex: -1,
+    statsModalBool: false,
 	totalKilometers: 0,
 };
