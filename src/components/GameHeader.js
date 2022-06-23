@@ -30,7 +30,7 @@ export default function GameHeader() {
 					GAME OVER
 				</h2>
 				<h2 className="header-middle">
-					Select a Level
+					Well Done!
 				</h2>
 				<h4 className="header">
 					Final Score: {!state.metricSystemBool ? Math.round(state.totalKilometers * 0.6213711922) : state.totalKilometers} 

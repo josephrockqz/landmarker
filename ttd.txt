@@ -7,10 +7,7 @@ Screens
             Average distance for each landmark across all levels
         Bootstrap figure?
 
-Create functionality for series of landmarks array to be in randomized order at every level start (?)
-
 Logic after series is done
-    May need to change GameHeader component
     Can re-prompt level selection modal
 
 SeriesStats Component

@@ -5,7 +5,7 @@ export default function LevelDisplay() {
     const [ state, ] = useContext(UserContext);
 
     const getLevel = () => {
-        if (state.seriesIndex == -1) {
+        if (state.seriesIndex === -1) {
             return;
         } else {
             return "Level " + (state.seriesIndex + 1);

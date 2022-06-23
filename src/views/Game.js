@@ -12,7 +12,7 @@ import SeriesStats from '../components/SeriesStats.js';
 export default function Game() {
 	const [ state, dispatch ] = useContext(UserContext);
 
-	if (state.seriesIndex != -1 && state.levelsModalBool === true) {
+	if (state.seriesIndex !== -1 && state.levelsModalBool === true) {
 		dispatch({ type: "close_levels_modal" });
 	}
 
