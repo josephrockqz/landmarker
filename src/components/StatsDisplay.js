@@ -2,6 +2,16 @@ import React from "react";
 import { Button } from "react-bootstrap";
 
 export default function StatsDisplay() {
+    const displayAverageGuess = () => {
+        const total_distance = localStorage.getItem("total_distance_guesssed");
+        if (total_distance == null) {
+            return "N/A";
+        } else {
+            const total_guesses = localStorage.getItem("num_landmarks_guessed");
+            return (total_distance / total_guesses);
+        }
+    };
+
     const resetStats = () => {
         console.log("reset stats");
     };
@@ -13,7 +23,7 @@ export default function StatsDisplay() {
                     Average Distance
                 </span>
                 <span>
-                    40 km
+                    {displayAverageGuess()}
                 </span>
             </div>
             <div className="stats-row">

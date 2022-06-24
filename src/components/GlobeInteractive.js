@@ -70,10 +70,22 @@ export default function GlobeInteractive() {
 	};
 
 	const saveStats = () => {
-		console.log("save stats");
-		// update average landmark guess
-			// increment total kilometers (numerator) by series total
-			// incremenet denominator by 10
+		let guesses_so_far = localStorage.getItem("num_landmarks_guessed");
+		let total_distance_so_far = localStorage.getItem("total_distance_guesssed");
+		if (guesses_so_far == null) {
+			guesses_so_far = 0;
+		}
+		if (total_distance_so_far == null) {
+			total_distance_so_far = 0;
+		}
+		console.log(guesses_so_far);
+		guesses_so_far = guesses_so_far + 10;
+		total_distance_so_far = total_distance_so_far + state.totalKilometers;
+		localStorage.setItem("num_landmarks_guessed", guesses_so_far);
+		localStorage.setItem("total_distance_guesssed", total_distance_so_far);
+		console.log(localStorage.getItem("num_landmarks_guessed"));
+		console.log(localStorage.getItem("total_distance_guesssed"));
+		// handle level bests with conditionals
 	};
 
     return (
