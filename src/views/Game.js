@@ -21,7 +21,7 @@ export default function Game() {
 	};
     
     const handleStatsModalClose = () => {
-        dispatch({ type: "close_stats_modal" });
+        dispatch({ type: "close_stats_game_modal" });
     };
 
 	return (
@@ -39,7 +39,7 @@ export default function Game() {
 
 			<SeriesStats />
 
-			<Modal show={state.levelsModalBool} onHide={handleLevelsModalClose} backdrop="static">
+			<Modal show={state.levelsModalBool} onHide={handleLevelsModalClose} backdrop="static" className="modal">
 				<Modal.Header>
 					<Modal.Title>Choose a Level</Modal.Title>
 				</Modal.Header>
@@ -48,7 +48,7 @@ export default function Game() {
 				</Modal.Body>
 			</Modal>
 
-			<Modal show={state.statsModalBool} onHide={handleStatsModalClose} backdrop="static">
+			<Modal show={state.statsModalGameBool} onHide={handleStatsModalClose} backdrop="static" className="modal">
 				<Modal.Header>
 					<Modal.Title>Statistics</Modal.Title>
 				</Modal.Header>

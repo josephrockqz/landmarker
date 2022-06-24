@@ -31,10 +31,15 @@ export const reducer = (state, action) => {
                 ...state,
                 levelsModalBool: false
             };
-        case "close_stats_modal":
+        case "close_stats_game_modal":
             return {
                 ...state,
-                statsModalBool: false
+                statsModalGameBool: false
+            };
+        case "close_stats_nav_modal":
+            return {
+                ...state,
+                statsModalNavBool: false
             };
         case "increment_landmark_index":
             return {
@@ -45,6 +50,18 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 levelsModalBool: true
+            };
+        case "open_stats_game_modal":
+            return {
+                ...state,
+                statsModalGameBool: true,
+                statsModalNavBool: false
+            };
+        case "open_stats_nav_modal":
+            return {
+                ...state,
+                statsModalGameBool: false,
+                statsModalNavBool: true
             };
         case "remove_rings":
             return {
@@ -171,6 +188,7 @@ export const initialState = {
 	rings: [],
     seriesDistances: [],
     seriesIndex: -1,
-    statsModalBool: false,
+    statsModalGameBool: false,
+    statsModalNavBool: false,
 	totalKilometers: 0,
 };

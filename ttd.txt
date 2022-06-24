@@ -5,7 +5,7 @@ Screens
         Stats
             Average total distance for each level
             Average distance for each landmark across all levels
-        Bootstrap figure?
+        Reset button
 
 Logic after series is done
     Can re-prompt level selection modal

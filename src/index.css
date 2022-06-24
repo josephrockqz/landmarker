@@ -63,6 +63,21 @@ html {
 	width: 344px;
 }
 
+.modal .modal-content {
+	background-color: peachpuff;
+	border: grey 5px solid;
+}
+
+.modal-header {
+	border: none !important;
+	text-align: center;
+	margin: auto;
+}
+
+.modal-footer {
+	border: none !important;
+}
+
 .nav-button {
 	background-color: transparent;
 	border: none;
