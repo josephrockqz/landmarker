@@ -6,15 +6,17 @@ Screens
             Average total distance for each level
             Average distance for each landmark across all levels
         Reset button
+        Make sure units are reactive to state bool
 
-Logic after series is done
-    Can re-prompt level selection modal
+Reset game progress when level is selected
 
 SeriesStats Component
     Make row click focus on respective coordinates
 
 Make language toggle button actually change words
     Use functions embedded in html that changes words based on state.language
+
+Input data for all five levels
 
 Look into cookies errors
 
@@ -32,5 +34,5 @@ Configure meta tags
 Change logo on tab
 Get rid of public icons
 
-Buy domain (landmarkgame.com)
+Buy domain (landmarkergame.com) (?)
 See how cloudflare and nginx handle a new domain

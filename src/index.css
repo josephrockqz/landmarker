@@ -117,6 +117,15 @@ html {
 	margin: 30px;
 }
 
+.stats-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin: 30px;
+	border-bottom: black 2px dashed;
+}
+
 .stats-div {
 	display: flex;
 	flex-direction: row;

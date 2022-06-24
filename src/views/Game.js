@@ -8,6 +8,7 @@ import LevelDisplay from "../components/LevelDisplay.js";
 import LevelSelect from "../components/LevelSelect.js";
 import NavBar from '../components/NavBar.js';
 import SeriesStats from '../components/SeriesStats.js';
+import StatsDisplay from "../components/StatsDisplay";
 
 export default function Game() {
 	const [ state, dispatch ] = useContext(UserContext);
@@ -53,7 +54,7 @@ export default function Game() {
 					<Modal.Title>Statistics</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					Average total distance
+					<StatsDisplay />
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleStatsModalClose}>

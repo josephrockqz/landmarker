@@ -59,13 +59,21 @@ export default function GlobeInteractive() {
 				dispatch({ type: "remove_rings" });
 				// end series
 				if (state.landmarkIndex === 9) {
-					alert("game is done");
+					saveStats();
+					dispatch({ type: "open_stats_game_modal" });
 				}
 			}, "1000");
 
 			// next landmark
 			dispatch({ type: "increment_landmark_index" });
 		}
+	};
+
+	const saveStats = () => {
+		console.log("save stats");
+		// update average landmark guess
+			// increment total kilometers (numerator) by series total
+			// incremenet denominator by 10
 	};
 
     return (
