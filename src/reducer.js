@@ -6,10 +6,7 @@ export const reducer = (state, action) => {
                 arcs: [...state.arcs, action.payload]
             };
         case "add_distance":
-            console.log("distancce added");
-            console.log(state.landmarkIndex);
             if (state.landmarkIndex === 9) {
-                console.log(state.totalKilometers);
                 let guesses_so_far = localStorage.getItem("num_landmarks_guessed");
                 let total_distance_so_far = localStorage.getItem("total_distance_guesssed");
                 console.log(guesses_so_far);
@@ -18,9 +15,13 @@ export const reducer = (state, action) => {
                 console.log(typeof(total_distance_so_far));
                 if (guesses_so_far == null) {
                     guesses_so_far = 0;
+                } else if (typeof(guesses_so_far) == "string") {
+                    guesses_so_far = parseInt(guesses_so_far);
                 }
                 if (total_distance_so_far == null) {
                     total_distance_so_far = 0;
+                } else if (typeof(total_distance_so_far) == "string") {
+                    total_distance_so_far = parseInt(total_distance_so_far);
                 }
                 guesses_so_far = guesses_so_far + 10;
                 total_distance_so_far = total_distance_so_far + state.totalKilometers + action.payload;

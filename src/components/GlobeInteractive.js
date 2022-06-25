@@ -59,7 +59,6 @@ export default function GlobeInteractive() {
 				dispatch({ type: "remove_rings" });
 				// end series
 				if (state.landmarkIndex === 9) {
-					saveStats();
 					dispatch({ type: "open_stats_game_modal" });
 				}
 			}, "1000");
