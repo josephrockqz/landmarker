@@ -6,6 +6,34 @@ export const reducer = (state, action) => {
                 arcs: [...state.arcs, action.payload]
             };
         case "add_distance":
+            console.log("distancce added");
+            console.log(state.landmarkIndex);
+            if (state.landmarkIndex === 9) {
+                console.log(state.totalKilometers);
+                let guesses_so_far = localStorage.getItem("num_landmarks_guessed");
+                let total_distance_so_far = localStorage.getItem("total_distance_guesssed");
+                console.log(guesses_so_far);
+                console.log(total_distance_so_far);
+                console.log(typeof(guesses_so_far));
+                console.log(typeof(total_distance_so_far));
+                if (guesses_so_far == null) {
+                    guesses_so_far = 0;
+                }
+                if (total_distance_so_far == null) {
+                    total_distance_so_far = 0;
+                }
+                guesses_so_far = guesses_so_far + 10;
+                total_distance_so_far = total_distance_so_far + state.totalKilometers + action.payload;
+                localStorage.setItem("num_landmarks_guessed", guesses_so_far);
+                localStorage.setItem("total_distance_guesssed", total_distance_so_far);
+                // update level best score if necessary
+                let best_level_score_so_far = localStorage.getItem(state.seriesIndex);
+                if (best_level_score_so_far == null || best_level_score_so_far === -1) {
+                    localStorage.setItem(state.seriesIndex, state.totalKilometers + action.payload);
+                } else if (best_level_score_so_far > state.totalKilometers + action.payload) {
+                    localStorage.setItem(state.seriesIndex, state.totalKilometers + action.payload);
+                }
+            }
             return {
                 ...state,
                 seriesDistances: [...state.seriesDistances, action.payload],

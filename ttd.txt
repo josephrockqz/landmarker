@@ -1,10 +1,8 @@
 Screens
     Stats Component
-        Use cookies or local storage to keep track of individual Stats
-            Similar to speed miner
         Stats
             Best score for each level
-        Reset button
+            Average score
         Make sure units are reactive to state bool
         Add little note about stats being kept with local storage
 
