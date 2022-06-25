@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
+import { UserContext } from "../index.js";
 
 export default function StatsDisplay() {
+    const [ state, ] = useContext(UserContext);
+
     const displayAverageGuess = () => {
-        const total_distance = localStorage.getItem("total_distance_guesssed");
-        if (total_distance == null) {
+        const total_distance = localStorage.getItem("total_distance_guessed");
+        if (total_distance == null || total_distance === 0) {
             return "N/A";
         } else {
             const total_guesses = localStorage.getItem("num_landmarks_guessed");
-            return (total_distance / total_guesses);
+            const average = Math.round(total_distance / total_guesses);
+            return (!state.metricSystemBool ? Math.round(average * 0.6213711922) + ' miles' : average + ' km');
+        }
+    };
+
+    const displayLevelBest = (index) => {
+        const score = localStorage.getItem(index);
+        if (score == null || score === -1) {
+            return "N/A";
+        } else {
+            return (!state.metricSystemBool ? Math.round(score * 0.6213711922) + ' miles' : score + ' km');
         }
     };
 
     const resetStats = () => {
-        console.log("reset stats");
+        localStorage.clear();
     };
 
     return (
@@ -31,7 +44,7 @@ export default function StatsDisplay() {
                     Level 1 Best
                 </span>
                 <span>
-                    40 km
+                    {displayLevelBest(0)}
                 </span>
             </div>
             <div className="stats-row">
@@ -39,7 +52,7 @@ export default function StatsDisplay() {
                     Level 2 Best
                 </span>
                 <span>
-                    40 km
+                    {displayLevelBest(1)}
                 </span>
             </div>
             <div className="stats-row">
@@ -47,7 +60,7 @@ export default function StatsDisplay() {
                     Level 3 Best
                 </span>
                 <span>
-                    40 km
+                    {displayLevelBest(2)}
                 </span>
             </div>
             <div className="stats-row">
@@ -55,7 +68,7 @@ export default function StatsDisplay() {
                     Level 4 Best
                 </span>
                 <span>
-                    40 km
+                    {displayLevelBest(3)}
                 </span>
             </div>
             <div className="stats-row">
@@ -63,7 +76,7 @@ export default function StatsDisplay() {
                     Level 5 Best
                 </span>
                 <span>
-                    40 km
+                    {displayLevelBest(4)}
                 </span>
             </div>
             <div style={{textAlign: 'center', margin: 'auto'}}>

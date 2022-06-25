@@ -72,20 +72,25 @@ export default function GlobeInteractive() {
 	const saveStats = () => {
 		let guesses_so_far = localStorage.getItem("num_landmarks_guessed");
 		let total_distance_so_far = localStorage.getItem("total_distance_guesssed");
+		console.log(guesses_so_far);
+		console.log(total_distance_so_far);
 		if (guesses_so_far == null) {
 			guesses_so_far = 0;
 		}
 		if (total_distance_so_far == null) {
 			total_distance_so_far = 0;
 		}
-		console.log(guesses_so_far);
 		guesses_so_far = guesses_so_far + 10;
 		total_distance_so_far = total_distance_so_far + state.totalKilometers;
 		localStorage.setItem("num_landmarks_guessed", guesses_so_far);
 		localStorage.setItem("total_distance_guesssed", total_distance_so_far);
-		console.log(localStorage.getItem("num_landmarks_guessed"));
-		console.log(localStorage.getItem("total_distance_guesssed"));
-		// handle level bests with conditionals
+		// update level best score if necessary
+		let best_level_score_so_far = localStorage.getItem(state.seriesIndex);
+		if (best_level_score_so_far == null || best_level_score_so_far === -1) {
+			localStorage.setItem(state.seriesIndex, state.totalKilometers);
+		} else if (best_level_score_so_far > state.totalKilometers) {
+			localStorage.setItem(state.seriesIndex, state.totalKilometers);
+		}
 	};
 
     return (

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../index.js";
 
 export default function GameHeader() {
-	const [ state, dispatch ] = useContext(UserContext);
+	const [ state, ] = useContext(UserContext);
 
 	if (state.landmarkIndex < 10) {
 		return (
