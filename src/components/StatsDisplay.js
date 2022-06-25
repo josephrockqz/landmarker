@@ -5,23 +5,44 @@ import { UserContext } from "../index.js";
 export default function StatsDisplay() {
     const [ state, ] = useContext(UserContext);
 
+    const checkLocalStorageAvailability = () => {
+        var test = 'test';
+        try {
+            localStorage.setItem(test, test);
+            localStorage.removeItem(test);
+            return "Note: statistics are kept using local storage";
+        } catch (e) {
+            return "Enable local storage in order to keep track of your statistics";
+        }
+    };
+
     const displayAverageGuess = () => {
-        const total_distance = localStorage.getItem("total_distance_guessed");
-        if (total_distance == null || total_distance === 0) {
-            return "N/A";
-        } else {
-            const total_guesses = localStorage.getItem("num_landmarks_guessed");
-            const average = Math.round(total_distance / total_guesses);
-            return (!state.metricSystemBool ? Math.round(average * 0.6213711922) + ' miles' : average + ' km');
+        try {
+            const total_distance = localStorage.getItem("total_distance_guessed");
+            if (total_distance == null || total_distance === 0) {
+                return "N/A";
+            } else {
+                const total_guesses = localStorage.getItem("num_landmarks_guessed");
+                const average = Math.round(total_distance / total_guesses);
+                return (!state.metricSystemBool ? Math.round(average * 0.6213711922) + ' miles' : average + ' km');
+            }
+        } catch (e) {
+            console.log(e);
+            console.log("local storage needs to be enabled in order for statistics to be tracked");
         }
     };
 
     const displayLevelBest = (index) => {
-        const score = localStorage.getItem(index);
-        if (score == null || score === -1) {
-            return "N/A";
-        } else {
-            return (!state.metricSystemBool ? Math.round(score * 0.6213711922) + ' miles' : score + ' km');
+        try {
+            const score = localStorage.getItem(index);
+            if (score == null || score === -1) {
+                return "N/A";
+            } else {
+                return (!state.metricSystemBool ? Math.round(score * 0.6213711922) + ' miles' : score + ' km');
+            }
+        } catch (e) {
+            console.log(e);
+            console.log("local storage needs to be enabled in order for statistics to be tracked");
         }
     };
 
@@ -87,7 +108,10 @@ export default function StatsDisplay() {
                         Reset Stats
                 </Button>
             </div>
-            
+            <div style={{paddingTop: "20px", textAlign: 'center'}}>
+                <p>{checkLocalStorageAvailability()}</p>
+            </div>
+
         </div>
     );
 };

@@ -7,32 +7,33 @@ export const reducer = (state, action) => {
             };
         case "add_distance":
             if (state.landmarkIndex === 9) {
-                let guesses_so_far = localStorage.getItem("num_landmarks_guessed");
-                let total_distance_so_far = localStorage.getItem("total_distance_guesssed");
-                console.log(guesses_so_far);
-                console.log(total_distance_so_far);
-                console.log(typeof(guesses_so_far));
-                console.log(typeof(total_distance_so_far));
-                if (guesses_so_far == null) {
-                    guesses_so_far = 0;
-                } else if (typeof(guesses_so_far) == "string") {
-                    guesses_so_far = parseInt(guesses_so_far);
-                }
-                if (total_distance_so_far == null) {
-                    total_distance_so_far = 0;
-                } else if (typeof(total_distance_so_far) == "string") {
-                    total_distance_so_far = parseInt(total_distance_so_far);
-                }
-                guesses_so_far = guesses_so_far + 10;
-                total_distance_so_far = total_distance_so_far + state.totalKilometers + action.payload;
-                localStorage.setItem("num_landmarks_guessed", guesses_so_far);
-                localStorage.setItem("total_distance_guesssed", total_distance_so_far);
-                // update level best score if necessary
-                let best_level_score_so_far = localStorage.getItem(state.seriesIndex);
-                if (best_level_score_so_far == null || best_level_score_so_far === -1) {
-                    localStorage.setItem(state.seriesIndex, state.totalKilometers + action.payload);
-                } else if (best_level_score_so_far > state.totalKilometers + action.payload) {
-                    localStorage.setItem(state.seriesIndex, state.totalKilometers + action.payload);
+                try {
+                    let guesses_so_far = localStorage.getItem("num_landmarks_guessed");
+                    let total_distance_so_far = localStorage.getItem("total_distance_guessed");
+                    if (guesses_so_far == null) {
+                        guesses_so_far = 0;
+                    } else if (typeof(guesses_so_far) == "string") {
+                        guesses_so_far = parseInt(guesses_so_far);
+                    }
+                    if (total_distance_so_far == null) {
+                        total_distance_so_far = 0;
+                    } else if (typeof(total_distance_so_far) == "string") {
+                        total_distance_so_far = parseInt(total_distance_so_far);
+                    }
+                    guesses_so_far = guesses_so_far + 10;
+                    total_distance_so_far = total_distance_so_far + state.totalKilometers + action.payload;
+                    localStorage.setItem("num_landmarks_guessed", guesses_so_far);
+                    localStorage.setItem("total_distance_guessed", total_distance_so_far);
+                    // update level best score if necessary
+                    let best_level_score_so_far = localStorage.getItem(state.seriesIndex);
+                    if (best_level_score_so_far == null || best_level_score_so_far === -1) {
+                        localStorage.setItem(state.seriesIndex, state.totalKilometers + action.payload);
+                    } else if (best_level_score_so_far > state.totalKilometers + action.payload) {
+                        localStorage.setItem(state.seriesIndex, state.totalKilometers + action.payload);
+                    }
+                } catch (e) {
+                    console.log(e);
+                    console.log("local storage needs to be enabled in order for statistics to be tracked");
                 }
             }
             return {
