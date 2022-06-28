@@ -10,7 +10,7 @@ export default function SeriesStats() {
         for (let i = 0; i < state.landmarkIndex; i++) {
             rows.push(<tr key={i} className="row">
                 <td key={i} className="stats-cell">
-                    <div className="stats-div" onClick={() => handleClick(i)}>
+                    <div className="stats-div">
                         <span>{state.landmarks[state.seriesIndex][i].name}: </span>
                         <span>{!state.metricSystemBool ? Math.round(state.seriesDistances[i] * 0.6213711922) : state.seriesDistances[i]} {!state.metricSystemBool ? ' miles' : ' km'}</span>
                     </div>
@@ -18,10 +18,6 @@ export default function SeriesStats() {
             </tr>);
         }
         return rows
-    }
-
-    const handleClick = (i) => {
-        console.log(state.landmarks[state.seriesIndex][i].name);
     }
 
     return (
