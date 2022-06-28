@@ -12,6 +12,7 @@ Clean up code in all files
 Configure meta tags
 Change logo on tab
 Get rid of public icons
+    Look at favicon icons (?)
 
 Buy domain (landmarkergame.com) (?)
 See how cloudflare and nginx handle a new domain
