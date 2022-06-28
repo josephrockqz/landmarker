@@ -1,8 +1,6 @@
 Make language toggle button actually change words
     Use functions embedded in html that changes words based on state.language
 
-Look into cookies errors
-
 Make user interface taylored to mobile
     (can disable certain features to make more manageable)
     Important that game is smooth on mobile!

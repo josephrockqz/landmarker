@@ -5,7 +5,13 @@ import { UserContext } from "../index.js";
 export default function GameHeader() {
 	const [ state, ] = useContext(UserContext);
 
-	if (state.landmarkIndex < 10) {
+	if (state.seriesIndex === -1) {
+		return (
+			<div></div>
+		);
+	}
+
+	else if (state.landmarkIndex < 10) {
 		return (
 			<div className="top-of-page">
 				<h2 className="header">

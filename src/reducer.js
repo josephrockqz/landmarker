@@ -485,7 +485,7 @@ export const initialState = {
             },
             {
                 latitude: 32.7523,
-				longitude: 79.8747,
+				longitude: -79.8747,
 				name: 'Fort Sumter',
 				color: 'black',
                 the_bool: false,
