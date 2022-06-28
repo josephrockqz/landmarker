@@ -20,6 +20,71 @@ export default function Settings() {
         }
         
     };
+
+    const languageToggle = () => {
+        switch (state.language) {
+            case "English":
+                return "Language";
+            case "Spanish":
+                return "Idioma";
+            case "Italian":
+                return "Linguaggio";
+            case "Russian":
+                return "язык";
+        }
+    };
+
+    const toggleBorders = () => {
+        switch (state.language) {
+            case "English":
+                return "Borders";
+            case "Spanish":
+                return "Fronteras";
+            case "Italian":
+                return "Frontiere";
+            case "Russian":
+                return "Границы";
+        }
+    };
+
+    const toggleTheme = () => {
+        switch (state.language) {
+            case "English":
+                return "Theme";
+            case "Spanish":
+                return "Tema";
+            case "Italian":
+                return "Tema";
+            case "Russian":
+                return "Тема";
+        }
+    };
+
+    // const toggleOff = () => {
+    //     switch (state.language) {
+    //         case "English":
+    //             return "Off";
+    //         case "Spanish":
+    //             return "Apagado";
+    //         case "Italian":
+    //             return "Spento";
+    //         case "Russian":
+    //             return "выкл";
+    //     }
+    // };
+
+    // const toggleOn = () => {
+    //     switch (state.language) {
+    //         case "English":
+    //             return "On";
+    //         case "Spanish":
+    //             return "Encendido";
+    //         case "Italian":
+    //             return "Acceso";
+    //         case "Russian":
+    //             return "вкл";
+    //     }
+    // };
     
     return (
         <div>
@@ -29,7 +94,7 @@ export default function Settings() {
 
                 <div className="settings-row">
                     <span>
-                        Language
+                        {languageToggle()}
                     </span>
                     <span>
                         <LanguageDropdown />
@@ -38,7 +103,7 @@ export default function Settings() {
 
                 <div className="settings-row">
                     <span>
-                        Borders
+                        {toggleBorders()}
                     </span>
                     <span>
                         <BootstrapSwitchButton
@@ -56,7 +121,7 @@ export default function Settings() {
 
                 <div className="settings-row">
                     <span>
-                        Theme
+                        {toggleTheme()}
                     </span>
                     <span>
                         <BootstrapSwitchButton
