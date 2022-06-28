@@ -9,7 +9,7 @@ export default function GameHeader() {
 		return (
 			<div className="top-of-page">
 				<h2 className="header">
-					Where is {state.landmarks[0][state.landmarkIndex].the_bool ? "the" : ""} <span className="landmark-name">{state.landmarks[0][state.landmarkIndex].name}</span>?
+					Where is {state.landmarks[state.seriesIndex][state.landmarkIndex].the_bool ? "the" : ""} <span className="landmark-name">{state.landmarks[state.seriesIndex][state.landmarkIndex].name}</span>?
 				</h2>
 				<h2 className="header-middle">
 					Locate on the globe

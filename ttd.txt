@@ -1,9 +1,5 @@
-Something on game view that prompts level select again after series finish
-
 Make language toggle button actually change words
     Use functions embedded in html that changes words based on state.language
-
-Input data for all five levels
 
 Look into cookies errors
 
