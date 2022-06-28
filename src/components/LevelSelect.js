@@ -25,6 +25,7 @@ export default function LevelSelect() {
     const handleClick = (i) => {
         dispatch({ type: "close_levels_modal" });
         dispatch({ type: "update_series_index", payload: i - 1 });
+        dispatch({ type: "reset_series" });
         navigate("/game");
     }
 

@@ -98,6 +98,17 @@ export const reducer = (state, action) => {
                 ...state,
                 rings: []
             };
+        case "reset_series":
+            return {
+                ...state,
+                arcs: [],
+                labels: [],
+                landmarkIndex: 0,
+                points: [],
+	            rings: [],
+                seriesDistances: [],
+                totalKilometers: 0
+            };
         case "update_borders":
             return {
                 ...state,

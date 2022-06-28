@@ -1,6 +1,4 @@
-Force refresh of stats component when stats are reset
-
-Be able to reset level somehow - better logic and flow
+Something on game view that prompts level select again after series finish
 
 SeriesStats Component
     Make row click focus on respective coordinates
