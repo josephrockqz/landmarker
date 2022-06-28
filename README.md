@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Notes About Landmarker
+
+* Distances between guesses and landmarks are calculated using the Haversine formula. More information about it can be found here: https://www.movable-type.co.uk/scripts/latlong.html
+* Landmarks include man-made constructions, natural landmarks, historical significances, and more
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
