@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
-
 import { UserContext } from "../index.js";
 
 export default function LevelSelect() {

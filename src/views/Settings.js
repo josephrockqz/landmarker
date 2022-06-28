@@ -2,9 +2,7 @@ import React, { useContext } from 'react';
 import GlobeStart from '../components/GlobeStart.js';
 import LanguageDropdown from '../components/LanguageDropdown.js';
 import NavBar from '../components/NavBar.js';
-
 import BootstrapSwitchButton from 'bootstrap-switch-button-react';
-
 import { UserContext } from "../index.js";
 
 export default function Settings() {
