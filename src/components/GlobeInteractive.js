@@ -65,7 +65,6 @@ export default function GlobeInteractive() {
 
 			// next landmark
 			dispatch({ type: "increment_landmark_index" });
-			console.log(state.totalKilometers);
 		}
 	};
 

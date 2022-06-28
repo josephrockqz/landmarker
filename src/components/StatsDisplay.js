@@ -4,6 +4,8 @@ import { UserContext } from "../index.js";
 
 export default function StatsDisplay() {
     const [ state, ] = useContext(UserContext);
+    const [, updateState] = React.useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
 
     const checkLocalStorageAvailability = () => {
         var test = 'test';
@@ -48,6 +50,7 @@ export default function StatsDisplay() {
 
     const resetStats = () => {
         localStorage.clear();
+        forceUpdate();
     };
 
     return (

@@ -1,7 +1,3 @@
-Screens
-    Stats Component
-        Add little note about stats being kept with local storage
-
 Force refresh of stats component when stats are reset
 
 Be able to reset level somehow - better logic and flow
