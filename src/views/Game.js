@@ -10,6 +10,8 @@ import NavBar from '../components/NavBar.js';
 import SeriesStats from '../components/SeriesStats.js';
 import StatsDisplay from "../components/StatsDisplay";
 
+import { AiFillCloseSquare } from "react-icons/ai";
+
 export default function Game() {
 	const [ state, dispatch ] = useContext(UserContext);
 
@@ -58,10 +60,7 @@ export default function Game() {
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleStatsModalClose}>
-						Close
-					</Button>
-					<Button variant="primary" onClick={handleStatsModalClose}>
-						Okay
+						<AiFillCloseSquare color="white" size="25px" />
 					</Button>
 				</Modal.Footer>
 			</Modal>

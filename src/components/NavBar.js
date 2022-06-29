@@ -8,6 +8,8 @@ import { IoMdSettings } from 'react-icons/io';
 import { TbChartPie3 } from 'react-icons/tb';
 import StatsDisplay from './StatsDisplay';
 
+import { AiFillCloseSquare } from "react-icons/ai";
+
 export default function NavBar() {
     let navigate = useNavigate();
     const [ state, dispatch ] = useContext(UserContext);
@@ -46,10 +48,7 @@ export default function NavBar() {
 				</Modal.Body>
                 <Modal.Footer>
 					<Button variant="secondary" onClick={handleStatsModalClose}>
-						Close
-					</Button>
-					<Button variant="primary" onClick={handleStatsModalClose}>
-						Okay
+						<AiFillCloseSquare color="white" size="25px" />
 					</Button>
 				</Modal.Footer>
 			</Modal>
