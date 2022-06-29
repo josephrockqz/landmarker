@@ -1,3 +1,10 @@
+Make modal footer 1 button
+Randomize landmarks
+    Keep in seperate file (json ?)
+Fix Pearl Harbor location
+Fix borders mode grammar
+Replace Cloud Gate
+
 Make language toggle button actually change words
     Use functions embedded in html that changes words based on state.language
 

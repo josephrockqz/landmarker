@@ -34,6 +34,8 @@ export default function LanguageDropdown() {
                 return "Inglese";
             case "Russian":
                 return "Английский";
+            default:
+                return "English";
         }
     };
 
@@ -47,6 +49,8 @@ export default function LanguageDropdown() {
                 return "Spagnolo";
             case "Russian":
                 return "испанский";
+            default:
+                return "Spanish";
         }
     };
 
@@ -60,6 +64,8 @@ export default function LanguageDropdown() {
                 return "Italiano";
             case "Russian":
                 return "итальянский";
+            default:
+                return "Italian";
         }
     };
 
@@ -73,6 +79,8 @@ export default function LanguageDropdown() {
                 return "Russo";
             case "Russian":
                 return "Русский";
+            default:
+                return "Russian";
         }
     };
 

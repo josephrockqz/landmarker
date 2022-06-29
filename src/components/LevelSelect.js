@@ -5,7 +5,7 @@ import { UserContext } from "../index.js";
 
 export default function LevelSelect() {
     let navigate = useNavigate();
-    const [ state, dispatch ] = React.useContext(UserContext)
+    const [ , dispatch ] = React.useContext(UserContext)
 
     const createLevels = () => {
         let rows = []

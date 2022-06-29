@@ -31,6 +31,8 @@ export default function Settings() {
                 return "Linguaggio";
             case "Russian":
                 return "язык";
+            default:
+                return "Language";
         }
     };
 
@@ -44,6 +46,8 @@ export default function Settings() {
                 return "Frontiere";
             case "Russian":
                 return "Границы";
+            default:
+                return "Borders";
         }
     };
 
@@ -57,34 +61,10 @@ export default function Settings() {
                 return "Tema";
             case "Russian":
                 return "Тема";
+            default:
+                return "Theme";
         }
     };
-
-    // const toggleOff = () => {
-    //     switch (state.language) {
-    //         case "English":
-    //             return "Off";
-    //         case "Spanish":
-    //             return "Apagado";
-    //         case "Italian":
-    //             return "Spento";
-    //         case "Russian":
-    //             return "выкл";
-    //     }
-    // };
-
-    // const toggleOn = () => {
-    //     switch (state.language) {
-    //         case "English":
-    //             return "On";
-    //         case "Spanish":
-    //             return "Encendido";
-    //         case "Italian":
-    //             return "Acceso";
-    //         case "Russian":
-    //             return "вкл";
-    //     }
-    // };
     
     return (
         <div>
