@@ -19,7 +19,8 @@ export default function Home() {
             <div className="top-of-page">
                 <p className="home-text">
                     Click on the globe where you think each prompted landmark is located. 
-                    The closer you are, the better your score. Choose one of the 5 levels.
+                    The closer you are, the better your score. Each level has 10 landmarks. 
+                    Choose one of the 5 levels.
                 </p>
             </div>
 

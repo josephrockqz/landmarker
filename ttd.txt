@@ -1,7 +1,5 @@
 Randomize landmarks
     Keep in seperate file (json ?)
-Replace Cloud Gate
-Mention on home page that there are 10 landmarks in each level
 
 Make language toggle button actually change words
 

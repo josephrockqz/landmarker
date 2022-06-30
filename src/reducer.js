@@ -449,11 +449,11 @@ export const initialState = {
                 the_bool: true,
             },
             {
-                latitude: 41.8827,
-				longitude: -87.6233,
-				name: 'Cloud Gate',
+                latitude: 36.1441,
+				longitude: -5.3417,
+				name: 'Rock of Gibraltar',
 				color: 'black',
-                the_bool: false,
+                the_bool: true,
             },
             {
                 latitude: 50.0274,
