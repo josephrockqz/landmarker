@@ -1,13 +1,9 @@
-Make modal footer 1 button
 Randomize landmarks
     Keep in seperate file (json ?)
-Fix Pearl Harbor location
-Fix borders mode grammar
 Replace Cloud Gate
 Mention on home page that there are 10 landmarks in each level
 
 Make language toggle button actually change words
-    Use functions embedded in html that changes words based on state.language
 
 Make user interface taylored to mobile
     Center content in mobile

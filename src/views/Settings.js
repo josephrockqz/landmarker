@@ -12,7 +12,7 @@ export default function Settings() {
         if (state.bordersBool) {
             return (
                 <div className="top-of-page" style={{color: "red", paddingBottom: "20px"}}>
-                    Borders mode comings soon!
+                    Borders mode coming soon!
                 </div>
             );
         } else {

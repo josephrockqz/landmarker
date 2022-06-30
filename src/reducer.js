@@ -391,7 +391,7 @@ export const initialState = {
             },
             {
                 latitude: 21.3487,
-				longitude: 157.9440,
+				longitude: -157.9440,
 				name: 'Pearl Harbor',
 				color: 'black',
                 the_bool: false,
