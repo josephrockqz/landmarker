@@ -12,7 +12,7 @@ export default function Settings() {
         if (state.bordersBool) {
             return (
                 <div className="top-of-page" style={{color: "red", paddingBottom: "20px"}}>
-                    Borders mode coming soon!
+                    {toggleBordersUpdate()}
                 </div>
             );
         } else {
@@ -21,7 +21,7 @@ export default function Settings() {
         
     };
 
-    const languageToggle = () => {
+    const toggleLanguage = () => {
         switch (state.language) {
             case "English":
                 return "Language";
@@ -51,6 +51,21 @@ export default function Settings() {
         }
     };
 
+    const toggleBordersUpdate = () => {
+        switch (state.language) {
+            case "English":
+                return "Borders mode coming soon!";
+            case "Spanish":
+                return "¡El modo Fronteras llegará pronto!";
+            case "Italian":
+                return "Presto la modalità Confini!";
+            case "Russian":
+                return "Режим границ скоро появится!";
+            default:
+                return "Borders mode coming soon!";
+        }
+    };
+
     const toggleTheme = () => {
         switch (state.language) {
             case "English":
@@ -65,6 +80,21 @@ export default function Settings() {
                 return "Theme";
         }
     };
+
+    const toggleUnits = () => {
+        switch (state.language) {
+            case "English":
+                return "Units";
+            case "Spanish":
+                return "Unidades";
+            case "Italian":
+                return "Unità";
+            case "Russian":
+                return "Единицы";
+            default:
+                return "Units";
+        }
+    };
     
     return (
         <div>
@@ -74,7 +104,7 @@ export default function Settings() {
 
                 <div className="settings-row">
                     <span>
-                        {languageToggle()}
+                        {toggleLanguage()}
                     </span>
                     <span>
                         <LanguageDropdown />
@@ -88,8 +118,8 @@ export default function Settings() {
                     <span>
                         <BootstrapSwitchButton
                             checked={state.bordersBool}
-                            onlabel="On"
-                            offlabel="Off"
+                            onlabel="❌"
+                            offlabel="✅"
                             offstyle="secondary"
                             onChange={() => {
                                 dispatch({ type: "update_borders" })
@@ -106,8 +136,8 @@ export default function Settings() {
                     <span>
                         <BootstrapSwitchButton
                             checked={state.darkModeBool}
-                            onlabel="Dark"
-                            offlabel="Light"
+                            onlabel="🌚"
+                            offlabel=" 🌝"
                             offstyle="secondary"
                             onChange={() => {
                                 dispatch({ type: "update_theme" })
@@ -119,13 +149,13 @@ export default function Settings() {
 
                 <div className="settings-row">
                     <span>
-                        Units
+                        {toggleUnits()}
                     </span>
                     <span>
                         <BootstrapSwitchButton
                             checked={state.metricSystemBool}
-                            onlabel="Metric"
-                            offlabel="Imperial"
+                            onlabel="🇺🇸"
+                            offlabel="🇬🇧"
                             offstyle="secondary"
                             onChange={() => {
                                 dispatch({ type: "update_units" })
