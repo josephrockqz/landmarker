@@ -27,6 +27,36 @@ export default function Game() {
         dispatch({ type: "close_stats_game_modal" });
     };
 
+	const toggleLevelModalHeader = () => {
+		switch (state.language) {
+            case "English":
+                return "Choose a Level";
+            case "Spanish":
+                return "Elige un nivel";
+            case "Italian":
+                return "Scegli un livello";
+            case "Russian":
+                return "Выберите уровень";
+            default:
+                return "Choose a Level";
+        }
+	};
+
+	const toggleStatsModalHeader = () => {
+		switch (state.language) {
+            case "English":
+                return "Statistics";
+            case "Spanish":
+                return "Estadísticass";
+            case "Italian":
+                return "Statistiche";
+            case "Russian":
+                return "Статистика";
+            default:
+                return "Statistics";
+        }
+	};
+
 	return (
 		<div>
 
@@ -44,7 +74,7 @@ export default function Game() {
 
 			<Modal show={state.levelsModalBool} onHide={handleLevelsModalClose} backdrop="static" className="modal">
 				<Modal.Header>
-					<Modal.Title>Choose a Level</Modal.Title>
+					<Modal.Title>{toggleLevelModalHeader()}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					<LevelSelect />
@@ -53,7 +83,7 @@ export default function Game() {
 
 			<Modal show={state.statsModalGameBool} onHide={handleStatsModalClose} backdrop="static" className="modal">
 				<Modal.Header>
-					<Modal.Title>Statistics</Modal.Title>
+					<Modal.Title>{toggleStatsModalHeader()}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					<StatsDisplay />

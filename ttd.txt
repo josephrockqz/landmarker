@@ -1,9 +1,7 @@
-Make language toggle button actually change words
-
 Make user interface taylored to mobile
     Center content in mobile
     Fix bottom of screen
-    Modal sizing needs to be different it appears
+    LevelSelect modal sizing needs to be different it appears
     Clicking is innacurate
     NavBar needs to be fixed
     Entering Game before home screen

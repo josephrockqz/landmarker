@@ -8,7 +8,18 @@ export default function LevelDisplay() {
         if (state.seriesIndex === -1) {
             return;
         } else {
-            return "Level " + (state.seriesIndex + 1);
+            switch (state.language) {
+                case "English":
+                    return "Level " + (state.seriesIndex + 1);
+                case "Spanish":
+                    return "Nivel " + (state.seriesIndex + 1);
+                case "Italian":
+                    return "Livello " + (state.seriesIndex + 1);
+                case "Russian":
+                    return "Уровень " + (state.seriesIndex + 1);
+                default:
+                    return "Level " + (state.seriesIndex + 1);
+            }
         }
     };
 

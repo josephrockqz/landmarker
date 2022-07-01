@@ -18,6 +18,21 @@ export default function NavBar() {
         dispatch({ type: "close_stats_nav_modal" });
     };
 
+	const toggleStatsModalHeader = () => {
+		switch (state.language) {
+            case "English":
+                return "Statistics";
+            case "Spanish":
+                return "Estadísticass";
+            case "Italian":
+                return "Statistiche";
+            case "Russian":
+                return "Статистика";
+            default:
+                return "Statistics";
+        }
+	};
+
     return (
         <div className="navbar">
 			<div className="nav-left">
@@ -41,7 +56,7 @@ export default function NavBar() {
 
             <Modal show={state.statsModalNavBool} onHide={handleStatsModalClose} backdrop="static" className="modal">
 				<Modal.Header>
-					<Modal.Title>Statistics</Modal.Title>
+					<Modal.Title>{toggleStatsModalHeader()}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					<StatsDisplay />

@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from "../index.js";
 
 export default function GlobeStart() {
+    const [ state, ] = useContext(UserContext);
     let navigate = useNavigate();
+
+    const toggleGlobeStart = () => {
+        switch (state.language) {
+            case "English":
+                return "Click the globe to play!";
+            case "Spanish":
+                return "¡Haz clic en el globo para jugar!";
+            case "Italian":
+                return "Fare clic sul globo per giocare!";
+            case "Russian":
+                return "Нажмите на глобус, чтобы играть!";
+            default:
+                return "Click the globe to play!";
+        }
+        
+    };
 
     return (
         <div style={{textAlign: 'center'}}>
@@ -16,7 +34,7 @@ export default function GlobeStart() {
             >
             </img>
             <p style={{paddingTop: "20px"}}>
-                Click the globe to play!
+                {toggleGlobeStart()}
             </p>
         </div>
     );
