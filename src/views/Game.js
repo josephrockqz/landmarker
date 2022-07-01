@@ -62,6 +62,10 @@ export default function Game() {
 
             <NavBar />
 
+			<h3>
+				{state.isSmall ? "hooasdfaodsf" : "not considered small"}
+			</h3>
+
 			<GameHeader />
 
 			<div className="globe-container">
@@ -73,7 +77,7 @@ export default function Game() {
 			<SeriesStats />
 
 			<Modal
-				fullscreen={state.isMobile ? true : false}
+				fullscreen={state.isSmall ? true : false}
 				show={state.levelsModalBool}
 				onHide={handleLevelsModalClose}
 				backdrop="static"
@@ -88,7 +92,7 @@ export default function Game() {
 			</Modal>
 
 			<Modal
-				fullscreen={state.isMobile ? true : false}
+				fullscreen={state.isSmall ? true : false}
 				show={state.statsModalGameBool}
 				onHide={handleStatsModalClose}
 				backdrop="static"

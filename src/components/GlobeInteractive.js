@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 import Globe from 'react-globe.gl';
 import { UserContext } from "../index.js";
 
+import earthTopology from "../images/earth-topology.png";
+import earthDay from "../images/earth-day.jpg";
+import earthBlueMarble from "../images/earth-blue-marble.jpg";
+
 export default function GlobeInteractive() {
     const [ state, dispatch ] = useContext(UserContext);
 
@@ -71,11 +75,11 @@ export default function GlobeInteractive() {
     return (
         <Globe
 			backgroundColor='rgba(255,0,0,0)'
-			bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-			globeImageUrl={state.darkModeBool ? "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg" : "//unpkg.com/three-globe/example/img/earth-day.jpg"}
+			bumpImageUrl={earthTopology}
+			globeImageUrl={state.darkModeBool ? earthBlueMarble : earthDay}
 			onGlobeClick={handleGlobeClick}
-			height={state.isMobile ? 320 : 600}
-			width={state.isMobile ? 320 : 600}
+			height={state.isSmall ? 320 : 600}
+			width={state.isSmall ? 320 : 600}
 			lineHoverPrecision={1}
 			// point stuff
 			pointsData={state.points}
