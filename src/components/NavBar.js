@@ -53,6 +53,7 @@ export default function NavBar() {
 			</div>
 
             <Modal
+                fullscreen={state.isMobile ? true : false}
                 show={state.statsModalNavBool}
                 onHide={handleStatsModalClose}
                 backdrop="static"

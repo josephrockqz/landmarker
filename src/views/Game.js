@@ -72,8 +72,8 @@ export default function Game() {
 
 			<SeriesStats />
 
-			<Modal 
-				fullscreen
+			<Modal
+				fullscreen={state.isMobile ? true : false}
 				show={state.levelsModalBool}
 				onHide={handleLevelsModalClose}
 				backdrop="static"
@@ -88,6 +88,7 @@ export default function Game() {
 			</Modal>
 
 			<Modal
+				fullscreen={state.isMobile ? true : false}
 				show={state.statsModalGameBool}
 				onHide={handleStatsModalClose}
 				backdrop="static"

@@ -1,6 +1,4 @@
 Make user interface taylored to mobile
-    Center content in mobile
-    Fix bottom of screen
     Clicking is innacurate
 
 Buy domain (landmarkergame.com) (?)
