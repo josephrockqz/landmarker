@@ -180,6 +180,12 @@ body {
 		max-width: 320px !important;
 	}
 
+	.scene-container > * {
+		position: relative;
+		max-height: 320px !important;
+		max-width: 320px !important;
+	}
+
 	.stats-block {
 		padding-top: 20px;
 		margin: auto;

@@ -74,8 +74,8 @@ export default function GlobeInteractive() {
 			bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
 			globeImageUrl={state.darkModeBool ? "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg" : "//unpkg.com/three-globe/example/img/earth-day.jpg"}
 			onGlobeClick={handleGlobeClick}
-			height={600}
-			width={600}
+			height={state.isMobile ? 320 : 600}
+			width={state.isMobile ? 320 : 600}
 			lineHoverPrecision={1}
 			// point stuff
 			pointsData={state.points}
