@@ -154,8 +154,8 @@ export default function Settings() {
                     <span>
                         <BootstrapSwitchButton
                             checked={state.metricSystemBool}
-                            onlabel="🇺🇸"
-                            offlabel="🇬🇧"
+                            onlabel="🇬🇧"
+                            offlabel="🇺🇸"
                             offstyle="secondary"
                             onChange={() => {
                                 dispatch({ type: "update_units" })
