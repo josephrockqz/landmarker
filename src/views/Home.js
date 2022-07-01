@@ -26,10 +26,13 @@ export default function Home() {
 
             <LevelSelect />
 
-            <div className="top-of-page">
+            <h3 className="header-homepage">
+                Instructions
+            </h3>
+            <div className="header-homepage">
                 <p className="home-text">
-                    Landmarker uses the Haversine formula to calculate the spherical distance 
-                    between points on the globe.
+                    Zoom in and out on globe by scrolling on it. 
+                    Pan around the globe by pressing on the globe and dragging the mouse.
                 </p>
             </div>
 
@@ -37,7 +40,9 @@ export default function Home() {
 
             <div className="top-of-page">
                 <p className="home-text">
-                    Note: personal stats will not be saved if local storage is disabled.
+                    Note: personal stats will not be saved if local storage is disabled. 
+                    Landmarker uses the Haversine formula to calculate the spherical distance 
+                    between points on the globe.
                 </p>
             </div>
 

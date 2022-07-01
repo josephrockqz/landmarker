@@ -63,6 +63,12 @@ html {
 	width: 344px;
 }
 
+.levels-block {
+	padding-top: 20px;
+	margin: auto;
+	width: 280px;
+}
+
 .modal .modal-content {
 	background-color: peachpuff;
 	border: grey 5px solid;
@@ -164,10 +170,9 @@ html {
 		margin-top: 20px;
 	}
 
-	.levels-block {
-		padding-top: 20px;
-		margin: auto;
+	.header-homepage {
 		width: 320px;
+		margin: auto;
 	}
 
 	.navbar {
@@ -233,10 +238,9 @@ html {
 		margin-top: 20px;
 	}
 
-	.levels-block {
-		padding-top: 20px;
+	.header-homepage {
+		width: 600px;
 		margin: auto;
-		width: 320px;
 	}
 
 	.navbar {
