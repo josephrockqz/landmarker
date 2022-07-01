@@ -3,7 +3,6 @@ Make user interface taylored to mobile
     Fix bottom of screen
     LevelSelect modal sizing needs to be different it appears
     Clicking is innacurate
-    NavBar needs to be fixed
     Entering Game before home screen
 
 Buy domain (landmarkergame.com) (?)

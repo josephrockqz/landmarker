@@ -37,20 +37,18 @@ export default function NavBar() {
         <div className="navbar">
 			<div className="nav-left">
 				<button className="nav-button" onClick={() => { navigate("/"); }}>
-                    <TbHome size={30} />
+                    <TbHome size={25} />
                 </button>
 			</div>
 			<div className="nav-middle">
-				<button className="nav-button" onClick={() => { navigate("/game"); }}>
-                    <h1 className="nav-header">LANDMARKER</h1>
-                </button>
+                <h3 className="nav-header" onClick={() => { navigate("/game"); }} style={{cursor: 'pointer'}}>LANDMARKER</h3>
 			</div>
 			<div className="nav-right">
 				<button className="nav-button">
-                    <TbChartPie3 size={30} onClick={() => { dispatch({ type: "open_stats_nav_modal" }) }} />
+                    <TbChartPie3 size={25} onClick={() => { dispatch({ type: "open_stats_nav_modal" }) }} />
                 </button>
 				<button className="nav-button" onClick={() => { navigate("/settings"); }}>
-                    <IoMdSettings size={30} />
+                    <IoMdSettings size={25} />
                 </button>
 			</div>
 
