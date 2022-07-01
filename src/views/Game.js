@@ -72,7 +72,13 @@ export default function Game() {
 
 			<SeriesStats />
 
-			<Modal show={state.levelsModalBool} onHide={handleLevelsModalClose} backdrop="static" className="modal">
+			<Modal 
+				fullscreen
+				show={state.levelsModalBool}
+				onHide={handleLevelsModalClose}
+				backdrop="static"
+				className="modal"
+			>
 				<Modal.Header>
 					<Modal.Title>{toggleLevelModalHeader()}</Modal.Title>
 				</Modal.Header>
@@ -81,7 +87,12 @@ export default function Game() {
 				</Modal.Body>
 			</Modal>
 
-			<Modal show={state.statsModalGameBool} onHide={handleStatsModalClose} backdrop="static" className="modal">
+			<Modal
+				show={state.statsModalGameBool}
+				onHide={handleStatsModalClose}
+				backdrop="static"
+				className="modal"
+			>
 				<Modal.Header>
 					<Modal.Title>{toggleStatsModalHeader()}</Modal.Title>
 				</Modal.Header>

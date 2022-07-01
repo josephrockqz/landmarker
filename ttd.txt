@@ -1,9 +1,7 @@
 Make user interface taylored to mobile
     Center content in mobile
     Fix bottom of screen
-    LevelSelect modal sizing needs to be different it appears
     Clicking is innacurate
-    Entering Game before home screen
 
 Buy domain (landmarkergame.com) (?)
 See how cloudflare and nginx handle a new domain

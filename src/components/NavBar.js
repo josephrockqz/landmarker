@@ -52,7 +52,12 @@ export default function NavBar() {
                 </button>
 			</div>
 
-            <Modal show={state.statsModalNavBool} onHide={handleStatsModalClose} backdrop="static" className="modal">
+            <Modal
+                show={state.statsModalNavBool}
+                onHide={handleStatsModalClose}
+                backdrop="static"
+                className="modal"
+            >
 				<Modal.Header>
 					<Modal.Title>{toggleStatsModalHeader()}</Modal.Title>
 				</Modal.Header>
