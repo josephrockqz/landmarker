@@ -62,10 +62,6 @@ export default function Game() {
 
             <NavBar />
 
-			<h3>
-				{state.isSmall ? "hooasdfaodsf" : "not considered small"}
-			</h3>
-
 			<GameHeader />
 
 			<div className="globe-container">
