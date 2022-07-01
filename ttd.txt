@@ -1,5 +1,3 @@
-Randomize landmarks
-
 Make language toggle button actually change words
 
 Make user interface taylored to mobile

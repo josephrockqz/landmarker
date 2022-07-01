@@ -1,4 +1,12 @@
 const landmarkData = require("./data/landmarks.json");
+for (let i = 0; i < 5; i++) {
+    for (var k = 9; k > 0; k--) {
+        var j = Math.floor(Math.random() * (k + 1));
+        var temp = landmarkData[i][k];
+        landmarkData[i][k] = landmarkData[i][j];
+        landmarkData[i][j] = temp;
+    }
+}
 
 export const reducer = (state, action) => {
     switch (action.type) {
