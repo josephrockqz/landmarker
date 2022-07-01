@@ -9,7 +9,6 @@ for (let i = 0; i < 5; i++) {
 }
 
 const width = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
-console.log(width);
 var isSmall = false;
 if (width <= 600) {
     isSmall = true;
