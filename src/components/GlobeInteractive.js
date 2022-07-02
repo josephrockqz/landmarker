@@ -96,7 +96,7 @@ export default function GlobeInteractive() {
 			labelResolution={5}
 			// arc stuff
 			arcsData={state.arcs}
-			arcColor={d => d.arcColor}
+			arcColor={() => state.darkModeBool ? "white" : "black"}
 			arcLabel={d => !state.metricSystemBool ? Math.round(d.distance * 0.6213711922) + ' miles' : d.distance + ' km'}
 			// ring stuff
 			ringsData={state.rings}

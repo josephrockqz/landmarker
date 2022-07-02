@@ -14,6 +14,7 @@ import { AiFillCloseSquare } from "react-icons/ai";
 
 export default function Game() {
 	const [ state, dispatch ] = useContext(UserContext);
+	console.log(state);
 
 	if (state.seriesIndex !== -1 && state.levelsModalBool === true) {
 		dispatch({ type: "close_levels_modal" });
