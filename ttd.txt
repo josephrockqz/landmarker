@@ -1,2 +1,0 @@
-Buy domain (landmarkergame.com) (?)
-See how cloudflare and nginx handle a new domain
