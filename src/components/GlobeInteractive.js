@@ -6,30 +6,30 @@ import earthTopology from "../images/earth-topology.png";
 import earthDay from "../images/earth-day.jpg";
 import earthBlueMarble from "../images/earth-blue-marble.jpg";
 
+import { Button } from "react-bootstrap";
+import { BiNoEntry } from "react-icons/bi";
+
 export default function GlobeInteractive() {
     const [ state, dispatch ] = useContext(UserContext);
 	const globeEl = useRef();
 
 	useEffect(() => {
-		// Auto-rotate
-		// globeEl.current.controls().autoRotate = false;
-		// globeEl.current.controls().autoRotateSpeed = 0;
-		// Initial zoom in
-		// globeEl.current.pointOfView({ altitude: 2 }, 5000);
-		// const polarAngle = globeEl.current.getPolarAngle();
-		// console.log(polarAngle);
-	});
+		// disable zoom if device is touch screen
+			// this prevents unintended globe clicks when zooming with finger pinch
+		if (state.isTouchDevice === true) {
+			globeEl.current.controls().enableZoom = false;
+		}
 
-	useEffect(() => {
+		// globeEl.current.controls().zoomSpeed = 4;
+		// globeEl.current.controls().rotateSpeed = 4;
+
 		// Auto-rotate
 		// globeEl.current.controls().autoRotate = true;
 		// globeEl.current.controls().autoRotateSpeed = 0.3;
-		// globeEl.current.controls().zoomSpeed = 4;
-		// globeEl.current.controls().rotateSpeed = 4;
+
 		// Initial zoom in
-		// globeEl.current.pointOfView({ altitude: 2 }, 5000);
-		// const polarAngle = globeEl.current.getPolarAngle();
-		// console.log(polarAngle);
+		globeEl.current.pointOfView({ altitude: 2 }, 1500);
+		globeEl.current.controls().update();
 	}, []);
 
     const handleGlobeClick = click => {
@@ -95,38 +95,82 @@ export default function GlobeInteractive() {
 		}
 	};
 
+	const zoom = (num) => {
+		const currentDistance = globeEl.current.controls().getDistance();
+		let newDistance = 0;
+
+		if (num === 0) {
+			newDistance = (currentDistance - 50) / 100;
+			globeEl.current.pointOfView({ altitude: newDistance }, 100);
+		} else if (num === 1) {
+			newDistance = (currentDistance - 150) / 100;
+			globeEl.current.pointOfView({ altitude: newDistance }, 100);
+		}
+	};
+
     return (
-        <Globe
-			ref={globeEl}
-			backgroundColor='rgba(255,0,0,0)'
-			bumpImageUrl={earthTopology}
-			globeImageUrl={state.darkModeBool ? earthBlueMarble : earthDay}
-			onGlobeClick={handleGlobeClick}
-			height={state.isSmall ? 320 : 600}
-			width={state.isSmall ? 320 : 600}
-			lineHoverPrecision={1}
-			// point stuff
-			pointsData={state.points}
-			pointAltitude="size"
-			pointColor="color"
-			// label stuff
-			labelsData={state.labels}
-			labelLat={d => d.latitude}
-			labelLng={d => d.longitude}
-			labelText={d => d.name}
-			labelSize={1.0}
-			labelDotRadius={0.5}
-			labelColor={() => state.darkModeBool ? 'rgba(255, 255, 255, 0.75)' : 'rgba(0, 0, 0, 0.75)'}
-			labelResolution={5}
-			// arc stuff
-			arcsData={state.arcs}
-			arcColor={() => state.darkModeBool ? "white" : "black"}
-			arcLabel={d => !state.metricSystemBool ? Math.round(d.distance * 0.6213711922) + ' miles' : d.distance + ' km'}
-			// ring stuff
-			ringsData={state.rings}
-			ringLat={d => d.lat}
-			ringLng={d => d.lng}
-			ringColor={'blue'}
-		/>        
+		<div>
+			<div className="globe-container">
+				<Globe
+					ref={globeEl}
+					backgroundColor='rgba(255,0,0,0)'
+					bumpImageUrl={earthTopology}
+					globeImageUrl={state.darkModeBool ? earthBlueMarble : earthDay}
+					onGlobeClick={handleGlobeClick}
+					height={state.isSmall ? 320 : 600}
+					width={state.isSmall ? 320 : 600}
+					lineHoverPrecision={1}
+					// point stuff
+					pointsData={state.points}
+					pointAltitude="size"
+					pointColor="color"
+					// label stuff
+					labelsData={state.labels}
+					labelLat={d => d.latitude}
+					labelLng={d => d.longitude}
+					labelText={d => d.name}
+					labelSize={1.0}
+					labelDotRadius={0.5}
+					labelColor={() => state.darkModeBool ? 'rgba(255, 255, 255, 0.75)' : 'rgba(0, 0, 0, 0.75)'}
+					labelResolution={5}
+					// arc stuff
+					arcsData={state.arcs}
+					arcColor={() => state.darkModeBool ? "white" : "black"}
+					arcLabel={d => !state.metricSystemBool ? Math.round(d.distance * 0.6213711922) + ' miles' : d.distance + ' km'}
+					// ring stuff
+					ringsData={state.rings}
+					ringLat={d => d.lat}
+					ringLng={d => d.lng}
+					ringColor={'blue'}
+				/>
+			</div>
+			<div className="zoom-controls">
+
+				<Button
+					className="zoom-button"
+					onClick={() => { zoom(0); }}
+					style={{
+						backgroundColor: "#c9a330",
+						border: "none",
+						marginLeft: "20px"
+					}}
+				>
+					-
+				</Button>
+
+				<Button
+					className="zoom-button"
+					onClick={() => { zoom(1); }}
+					style={{
+						backgroundColor: "#c9a330",
+						border: "none",
+						marginRight: "20px"
+					}}
+				>
+					+
+				</Button>
+
+			</div>
+		</div>
     );
 };

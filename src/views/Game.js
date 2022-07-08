@@ -64,9 +64,7 @@ export default function Game() {
 
 			<GameHeader />
 
-			<div className="globe-container">
-				<GlobeInteractive />
-			</div>
+			<GlobeInteractive />
 
 			<LevelDisplay />
 

@@ -14,6 +14,13 @@ if (width <= 600) {
     isSmall = true;
 }
 
+const isTouchDevice = () => {  
+    return (('ontouchstart' in window) ||  
+        (navigator.maxTouchPoints > 0) ||  
+        (navigator.msMaxTouchPoints > 0));  
+};
+const touchDeviceBool = isTouchDevice();
+
 export const reducer = (state, action) => {
     switch (action.type) {
         case "add_arc":
@@ -162,6 +169,7 @@ export const initialState = {
     darkModeBool: false,
     globeTouchedBool: false,
     isSmall: isSmall,
+    isTouchDevice: touchDeviceBool,
 	labels: [],
 	landmarkIndex: 0,
 	landmarks: landmarkData,
