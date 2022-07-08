@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import Globe from 'react-globe.gl';
 import { UserContext } from "../index.js";
 
@@ -8,6 +8,29 @@ import earthBlueMarble from "../images/earth-blue-marble.jpg";
 
 export default function GlobeInteractive() {
     const [ state, dispatch ] = useContext(UserContext);
+	const globeEl = useRef();
+
+	useEffect(() => {
+		// Auto-rotate
+		// globeEl.current.controls().autoRotate = false;
+		// globeEl.current.controls().autoRotateSpeed = 0;
+		// Initial zoom in
+		// globeEl.current.pointOfView({ altitude: 2 }, 5000);
+		// const polarAngle = globeEl.current.getPolarAngle();
+		// console.log(polarAngle);
+	});
+
+	useEffect(() => {
+		// Auto-rotate
+		// globeEl.current.controls().autoRotate = true;
+		// globeEl.current.controls().autoRotateSpeed = 0.3;
+		// globeEl.current.controls().zoomSpeed = 4;
+		// globeEl.current.controls().rotateSpeed = 4;
+		// Initial zoom in
+		// globeEl.current.pointOfView({ altitude: 2 }, 5000);
+		// const polarAngle = globeEl.current.getPolarAngle();
+		// console.log(polarAngle);
+	}, []);
 
     const handleGlobeClick = click => {
 		// Game view should not be here if seriesIndex is not 0-4
@@ -74,6 +97,7 @@ export default function GlobeInteractive() {
 
     return (
         <Globe
+			ref={globeEl}
 			backgroundColor='rgba(255,0,0,0)'
 			bumpImageUrl={earthTopology}
 			globeImageUrl={state.darkModeBool ? earthBlueMarble : earthDay}

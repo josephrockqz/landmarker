@@ -160,6 +160,7 @@ export const initialState = {
     arcs: [],
     bordersBool: false,
     darkModeBool: false,
+    globeTouchedBool: false,
     isSmall: isSmall,
 	labels: [],
 	landmarkIndex: 0,
