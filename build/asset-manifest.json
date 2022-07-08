@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.7aa68252.css",
-    "main.js": "/static/js/main.95fefba6.js",
+    "main.css": "/static/css/main.11c1fc4b.css",
+    "main.js": "/static/js/main.5cffe996.js",
     "static/media/earth-blue-marble.jpg": "/static/media/earth-blue-marble.7deee995d548fe65faff.jpg",
     "static/media/earth-topology.png": "/static/media/earth-topology.739e278bf846bb7b50d5.png",
     "static/media/earth-day.jpg": "/static/media/earth-day.00bced8f697346025df6.jpg",
     "index.html": "/index.html",
-    "main.7aa68252.css.map": "/static/css/main.7aa68252.css.map",
-    "main.95fefba6.js.map": "/static/js/main.95fefba6.js.map"
+    "main.11c1fc4b.css.map": "/static/css/main.11c1fc4b.css.map",
+    "main.5cffe996.js.map": "/static/js/main.5cffe996.js.map"
   },
   "entrypoints": [
-    "static/css/main.7aa68252.css",
-    "static/js/main.95fefba6.js"
+    "static/css/main.11c1fc4b.css",
+    "static/js/main.5cffe996.js"
   ]
 }
