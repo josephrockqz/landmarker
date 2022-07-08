@@ -7,7 +7,6 @@ import earthDay from "../images/earth-day.jpg";
 import earthBlueMarble from "../images/earth-blue-marble.jpg";
 
 import { Button } from "react-bootstrap";
-import { BiNoEntry } from "react-icons/bi";
 
 export default function GlobeInteractive() {
     const [ state, dispatch ] = useContext(UserContext);
@@ -30,7 +29,7 @@ export default function GlobeInteractive() {
 		// Initial zoom in
 		globeEl.current.pointOfView({ altitude: 2 }, 1500);
 		globeEl.current.controls().update();
-	}, []);
+	}, [state.isTouchDevice]);
 
     const handleGlobeClick = click => {
 		// Game view should not be here if seriesIndex is not 0-4
