@@ -1,7 +1,7 @@
 # Notes About Landmarker
 
 * Distances between guesses and landmarks are calculated using the Haversine formula. More information about it can be found here: https://www.movable-type.co.uk/scripts/latlong.html
-* Landmarks include man-made constructions, natural landmarks, historical significances, and more
+* Landmarks include man-made constructions, natural landmarks, historical significant places, and more
 * The making of this game was inspired by Globle, Worldle, and geography in general
 * The game was created with the React JavaScript framework
 
