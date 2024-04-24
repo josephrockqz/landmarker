@@ -1,4 +1,22 @@
 Fix zoom on mobile
 
-Change dark mode picture (?)
-    elevated polygons example
+Memoization of components
+UseCallback hook
+Optimize Context Usage
+    - Consider splitting context into multiple contexts based on functionality or data grouping
+    - This way, components only re-render when the part of the context they use is updated
+Lazy Loading Components
+    - This way, components are only loaded when they are needed
+Avoid Inline Styles and Functions in JSX
+Optimize Conditional rendering
+Internationalization (i18n) Library
+    - Consider using a library like i18next for internationalization
+    - This way, the application can be localized to different languages and cultures
+    - This is especially useful for accessibility and SEO
+UseReducer Complex State Logic
+    - Might be beneficial to split a large reducer into smaller ones if different parts of the state are updated independently
+Code Splitting for Routes
+    - Use dynamic import() with React.lazy for different routes to split the codebase into smaller chunks
+Analyze Bundle Size
+    - Use tools like Webpack Bundle Analyzer to find out which packages or files are taking up the most space
+    - See if there are smaller alternatives or opportunities to lazy load parts of the application
