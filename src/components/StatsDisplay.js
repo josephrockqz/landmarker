@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import { useCallback, useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import { UserContext } from "../index.js";
 
 export default function StatsDisplay() {
     const [ state, ] = useContext(UserContext);
-    const [, updateState] = React.useState();
-    const forceUpdate = React.useCallback(() => updateState({}), []);
+    const [, updateState] = useState();
+    const forceUpdate = useCallback(() => updateState({}), []);
 
     const checkLocalStorageAvailability = () => {
         var test = 'test';
